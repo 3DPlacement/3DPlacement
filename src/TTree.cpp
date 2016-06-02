@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cassert>
 #include <algorithm>
 #include "TTree.h"
 #include "Random.h"
@@ -6,6 +7,7 @@
 
 void TTree::initialize(std::vector<const Block*> blocks)
 {
+    pool.reserve(blocks.size());
     std::shuffle(blocks.begin(), blocks.end(), Random::getInstance().getEngine());
     initializeRecur(root, 0, blocks);
 }
@@ -13,7 +15,8 @@ void TTree::initialize(std::vector<const Block*> blocks)
 void TTree::initializeRecur(Node *&p, size_t id, const std::vector<const Block*> &blocks)
 {
     if (id >= blocks.size()) return;
-    p = new Node(RotatableBlock(blocks[id], RotatableBlock::getRandRotate()));
+    pool.emplace_back(RotatableBlock(blocks[id], RotatableBlock::getRandRotate()));
+    p = &pool.back(), p->in = &p;
     initializeRecur(p->l, id * 3 + 1, blocks);
     initializeRecur(p->m, id * 3 + 2, blocks);
     initializeRecur(p->r, id * 3 + 3, blocks);
@@ -42,5 +45,42 @@ void TTree::getPlacementRecur(const TTree::Node *p, ContourList::Node *q, double
         ContourList::deleteSeg(q, NULL, NULL);
         getPlacementRecur(p->r, new ContourList::Node(_y, -INFINITY, INFINITY), z, placement);
     }
+}
+
+void TTree::swapNode(TTree::Node *p, TTree::Node *q)
+{
+    std::swap(p->block, q->block);
+}
+
+TTree::Node *TTree::detach(TTree::Node *p)
+{
+#ifndef NDEBUG
+    const Block *oriBlock = p->block.block; // used for checking
+#endif
+    while (p->l || p->m || p->r)
+    {
+        int cnt(0);
+        Node *child[3];
+        if (p->l) child[cnt++] = p->l;
+        if (p->m) child[cnt++] = p->m;
+        if (p->r) child[cnt++] = p->r;
+        Node *q = child[Random::getInstance().getRandomInt(0, cnt - 1)];
+        swapNode(p, q);
+        p = q;
+    }
+    *(p->in) = NULL, p->in = NULL;
+    assert(p->block.block == oriBlock);
+    return p;
+}
+
+void TTree::insert(Node *parent, Node *child)
+{
+    assert(!child->l && !child->m && !child->r && !child->in);
+    Node* Node::*candidates[3] = { &Node::l, &Node::m, &Node::r };
+    Node* Node::*c = candidates[Random::getInstance().getRandomInt(0, 2)];
+    child->*c = parent->*c;
+    if (child->*c) (child->*c)->in = &(child->*c);
+    parent->*c = child;
+    child->in = &(parent->*c);
 }
 
