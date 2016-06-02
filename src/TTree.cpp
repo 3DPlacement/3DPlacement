@@ -5,6 +5,24 @@
 #include "Random.h"
 #include "Placement.h"
 
+void TTree::deleteRecur(Node *&p)
+{
+    if (!p) return;
+    deleteRecur(p->l);
+    deleteRecur(p->m);
+    deleteRecur(p->r);
+    delete p;
+    p = NULL;
+}
+
+void TTree::initialize(const std::vector<Block> &blocks)
+{
+    std::vector<const Block*> blockPtrs;
+    for (const auto &item : blocks)
+        blockPtrs.push_back(&item);
+    initialize(blockPtrs);
+}
+
 void TTree::initialize(std::vector<const Block*> blocks)
 {
     pool.reserve(blocks.size());
@@ -83,4 +101,27 @@ void TTree::insert(Node *parent, Node *child)
     parent->*c = child;
     child->in = &(parent->*c);
 }
+
+#ifndef NDEBUG
+
+void TTree::verify() const
+{
+    std::set<const Block*> blocks;
+    verifyRecur(root, blocks);
+    assert(blocks.size() == pool.size());
+}
+
+void TTree::verifyRecur(const Node* const& p, std::set<const Block*> &blocks) const
+{
+    blocks.insert(p->block.block);
+    assert(&p == p->in);
+    if (p->l)
+        verifyRecur(p->l, blocks);
+    if (p->m)
+        verifyRecur(p->m, blocks);
+    if (p->r)
+        verifyRecur(p->r, blocks);
+}
+
+#endif // NDEBUG
 

@@ -1,0 +1,4 @@
+<map id="Placement::BlockWithPos" name="Placement::BlockWithPos">
+<area shape="rect" id="node2" href="$structRotatableBlock.html" title="{RotatableBlock\n|+ rotation\l|+ RotatableBlock()\l+ getL()\l+ getW()\l+ getH()\l+ getRandRotate()\l}" alt="" coords="27,189,158,325"/>
+<area shape="rect" id="node3" href="$structBlock.html" title="Defines a block out of the coordinates. This is determined by input and will not modified in the algo..." alt="" coords="55,5,130,127"/>
+</map>

@@ -2,6 +2,7 @@
 #define T_TREE_H_
 
 #include <cstdlib>
+#include <set>
 #include <vector>
 #include "Block.h"
 #include "Random.h"
@@ -12,7 +13,13 @@ class Placement;
 class TTree
 {
 public:
+    TTree() : root(NULL) {}
+    ~TTree() { deleteRecur(root); }
+
     /// Randomly initialize a tree with given blocks
+    void initialize(const std::vector<Block> &blocks);
+
+    /// Randomly initialize a tree with given const blocks pointers
     /// @1 : blocks. The given blocks. Shouldn't be const &
     void initialize(std::vector<const Block*> blocks);
 
@@ -31,6 +38,17 @@ public:
     /// O(1).
     void randomRotate();
 
+    TTree(const TTree &) = delete;
+    TTree &operator=(const TTree &) = delete;
+    TTree(TTree &&) = default;
+    TTree &operator=(TTree &&) = default;
+
+#ifndef NDEBUG
+    /// Verify the some correctness of the tree
+    /// Uses assert
+    void verify() const;
+#endif // NDEBUG
+
 private:
     /// Internal class. A node of T Tree.
     struct Node
@@ -44,7 +62,12 @@ private:
 
         Node(const Node &) = delete;
         Node &operator=(const Node &) = delete;
+        Node(Node &&) = default;
+        Node &operator=(Node &&) = default;
     };
+
+    /// Used by TTree::~TTree()
+    void deleteRecur(Node *&p);
 
     /// Used by TTree::initialize
     void initializeRecur(Node *&p, size_t id, const std::vector<const Block*> &blocks);
@@ -68,6 +91,11 @@ private:
 
     /// Randomly insert node `child` as child of node `parent`
     void insert(Node *parent, Node *child);
+
+#ifndef NDEBUG
+    /// Used by Tree::verify
+    void verifyRecur(const Node* const& p, std::set<const Block*> &blocks) const;
+#endif // NDEBUG
 
     Node *root;
 

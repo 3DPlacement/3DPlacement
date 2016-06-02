@@ -11,9 +11,10 @@
 struct Block
 {
     double l, w, h; /// corresponding to x, y, z axies.
-    void *userData; /// preserved to store extra data, such as id or name
+    int id; /// optional. preserved to link to extra data.
 
-    Block(double _l, double _w, double _h) : l(_l), w(_w), h(_h), userData(NULL) {}
+    Block(double _l, double _w, double _h, int _id = -1)
+        : l(_l), w(_w), h(_h), id(_id) {}
 };
 
 struct RotatableBlock

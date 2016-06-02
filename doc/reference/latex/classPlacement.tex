@@ -1,0 +1,218 @@
+\hypertarget{classPlacement}{}\section{Placement Class Reference}
+\label{classPlacement}\index{Placement@{Placement}}
+
+
+A compact placement of blocks.  
+
+
+
+
+{\ttfamily \#include $<$Placement.\+h$>$}
+
+
+
+Collaboration diagram for Placement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classPlacement__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlacement_aa0020a3dd0bedb34998968adfacf8a4e}{Placement} ()
+\item 
+const std\+::vector$<$ \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} $>$ \& \hyperlink{classPlacement_a8d2aff015fbf652bbccae2db6c7dd7d9}{get\+Positions} () const 
+\begin{DoxyCompactList}\small\item\em Get all blocks\textquotesingle{} positions. \end{DoxyCompactList}\item 
+double \hyperlink{classPlacement_a686b1f2aa26ae12285a5759d1b6e5f67}{get\+Volume} () const 
+\begin{DoxyCompactList}\small\item\em Get the volume of the bounding box. \end{DoxyCompactList}\item 
+void \hyperlink{classPlacement_a21dc44cf496d771e5c2ac17a24ac1703}{add\+Block} (const \hyperlink{structRotatableBlock}{Rotatable\+Block} \&\+\_\+block, double \+\_\+y, double \+\_\+z)
+\begin{DoxyCompactList}\small\item\em Add one block into this placement. \end{DoxyCompactList}\item 
+void \hyperlink{classPlacement_a7e54624dff8703581efc6be7d1af991e}{verify} () const 
+\begin{DoxyCompactList}\small\item\em Verify some correctness. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classPlacement_a9d95d0c91c23c7c8d627a81ed03ffa13}{overlapping2\+D} (double \hyperlink{classPlacement_a4c17ed499418886700bf8e4d4ee45047}{y1}, double \hyperlink{classPlacement_a3e9d90f2d85b6641d2fd7d74d2600394}{z1}, double w1, double h1, double \hyperlink{classPlacement_ae7b89409ab130ba3d7c268faf7175b40}{y2}, double \hyperlink{classPlacement_aed710205286315a2a14f8cc2ceacd267}{z2}, double w2, double h2)
+\begin{DoxyCompactList}\small\item\em Check whether two squres are overlapping with each other in 2\+D plane (parameters for Y\+Z plane) \end{DoxyCompactList}\item 
+static bool \hyperlink{classPlacement_aedd3513c4fc7a9cccd83144c65c83c00}{overlapping\+X\+Y\+Z} (const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b1, const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b2)
+\begin{DoxyCompactList}\small\item\em Check whether two \hyperlink{structPlacement_1_1BlockWithPos}{Placement\+::\+Block\+With\+Pos} are overlapping with each other. \end{DoxyCompactList}\item 
+static bool \hyperlink{classPlacement_ab87e46b2e8e64fd0be0c07b74651cd82}{overlapping\+X\+Y} (const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b1, const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b2)
+\item 
+static bool \hyperlink{classPlacement_a2f0b907f20632d98c1169e7c3ad427db}{overlapping\+Y\+Z} (const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b1, const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b2)
+\item 
+static bool \hyperlink{classPlacement_af6823b9b781ae186e922774bb4623b17}{overlapping\+X\+Z} (const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b1, const \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} \&b2)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+Pos} $>$ \hyperlink{classPlacement_a5c4c9527336f2c2c18e2c6234aad8878}{positions}
+\item 
+double \hyperlink{classPlacement_a7061408d3dac137528697314b5825daf}{x1}
+\begin{DoxyCompactList}\small\item\em Six boundary. \end{DoxyCompactList}\item 
+double \hyperlink{classPlacement_acb44c4ead672e30af3b6cf3758db090c}{x2}
+\item 
+double \hyperlink{classPlacement_a4c17ed499418886700bf8e4d4ee45047}{y1}
+\item 
+double \hyperlink{classPlacement_ae7b89409ab130ba3d7c268faf7175b40}{y2}
+\item 
+double \hyperlink{classPlacement_a3e9d90f2d85b6641d2fd7d74d2600394}{z1}
+\item 
+double \hyperlink{classPlacement_aed710205286315a2a14f8cc2ceacd267}{z2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A compact placement of blocks. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPlacement_aa0020a3dd0bedb34998968adfacf8a4e}{}\index{Placement@{Placement}!Placement@{Placement}}
+\index{Placement@{Placement}!Placement@{Placement}}
+\subsubsection[{Placement}]{\setlength{\rightskip}{0pt plus 5cm}Placement\+::\+Placement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classPlacement_aa0020a3dd0bedb34998968adfacf8a4e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPlacement_a21dc44cf496d771e5c2ac17a24ac1703}{}\index{Placement@{Placement}!add\+Block@{add\+Block}}
+\index{add\+Block@{add\+Block}!Placement@{Placement}}
+\subsubsection[{add\+Block}]{\setlength{\rightskip}{0pt plus 5cm}void Placement\+::add\+Block (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rotatable\+Block} \&}]{\+\_\+block, }
+\item[{double}]{\+\_\+y, }
+\item[{double}]{\+\_\+z}
+\end{DoxyParamCaption}
+)}\label{classPlacement_a21dc44cf496d771e5c2ac17a24ac1703}
+
+
+Add one block into this placement. 
+
+\hypertarget{classPlacement_a8d2aff015fbf652bbccae2db6c7dd7d9}{}\index{Placement@{Placement}!get\+Positions@{get\+Positions}}
+\index{get\+Positions@{get\+Positions}!Placement@{Placement}}
+\subsubsection[{get\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf Block\+With\+Pos}$>$\& Placement\+::get\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPlacement_a8d2aff015fbf652bbccae2db6c7dd7d9}
+
+
+Get all blocks\textquotesingle{} positions. 
+
+\hypertarget{classPlacement_a686b1f2aa26ae12285a5759d1b6e5f67}{}\index{Placement@{Placement}!get\+Volume@{get\+Volume}}
+\index{get\+Volume@{get\+Volume}!Placement@{Placement}}
+\subsubsection[{get\+Volume}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::get\+Volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPlacement_a686b1f2aa26ae12285a5759d1b6e5f67}
+
+
+Get the volume of the bounding box. 
+
+\hypertarget{classPlacement_a9d95d0c91c23c7c8d627a81ed03ffa13}{}\index{Placement@{Placement}!overlapping2\+D@{overlapping2\+D}}
+\index{overlapping2\+D@{overlapping2\+D}!Placement@{Placement}}
+\subsubsection[{overlapping2\+D}]{\setlength{\rightskip}{0pt plus 5cm}bool Placement\+::overlapping2\+D (
+\begin{DoxyParamCaption}
+\item[{double}]{y1, }
+\item[{double}]{z1, }
+\item[{double}]{w1, }
+\item[{double}]{h1, }
+\item[{double}]{y2, }
+\item[{double}]{z2, }
+\item[{double}]{w2, }
+\item[{double}]{h2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_a9d95d0c91c23c7c8d627a81ed03ffa13}
+
+
+Check whether two squres are overlapping with each other in 2\+D plane (parameters for Y\+Z plane) 
+
+\hypertarget{classPlacement_ab87e46b2e8e64fd0be0c07b74651cd82}{}\index{Placement@{Placement}!overlapping\+X\+Y@{overlapping\+X\+Y}}
+\index{overlapping\+X\+Y@{overlapping\+X\+Y}!Placement@{Placement}}
+\subsubsection[{overlapping\+X\+Y}]{\setlength{\rightskip}{0pt plus 5cm}bool Placement\+::overlapping\+X\+Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Block\+With\+Pos} \&}]{b1, }
+\item[{const {\bf Block\+With\+Pos} \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_ab87e46b2e8e64fd0be0c07b74651cd82}
+\hypertarget{classPlacement_aedd3513c4fc7a9cccd83144c65c83c00}{}\index{Placement@{Placement}!overlapping\+X\+Y\+Z@{overlapping\+X\+Y\+Z}}
+\index{overlapping\+X\+Y\+Z@{overlapping\+X\+Y\+Z}!Placement@{Placement}}
+\subsubsection[{overlapping\+X\+Y\+Z}]{\setlength{\rightskip}{0pt plus 5cm}bool Placement\+::overlapping\+X\+Y\+Z (
+\begin{DoxyParamCaption}
+\item[{const {\bf Block\+With\+Pos} \&}]{b1, }
+\item[{const {\bf Block\+With\+Pos} \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_aedd3513c4fc7a9cccd83144c65c83c00}
+
+
+Check whether two \hyperlink{structPlacement_1_1BlockWithPos}{Placement\+::\+Block\+With\+Pos} are overlapping with each other. 
+
+\hypertarget{classPlacement_af6823b9b781ae186e922774bb4623b17}{}\index{Placement@{Placement}!overlapping\+X\+Z@{overlapping\+X\+Z}}
+\index{overlapping\+X\+Z@{overlapping\+X\+Z}!Placement@{Placement}}
+\subsubsection[{overlapping\+X\+Z}]{\setlength{\rightskip}{0pt plus 5cm}bool Placement\+::overlapping\+X\+Z (
+\begin{DoxyParamCaption}
+\item[{const {\bf Block\+With\+Pos} \&}]{b1, }
+\item[{const {\bf Block\+With\+Pos} \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_af6823b9b781ae186e922774bb4623b17}
+\hypertarget{classPlacement_a2f0b907f20632d98c1169e7c3ad427db}{}\index{Placement@{Placement}!overlapping\+Y\+Z@{overlapping\+Y\+Z}}
+\index{overlapping\+Y\+Z@{overlapping\+Y\+Z}!Placement@{Placement}}
+\subsubsection[{overlapping\+Y\+Z}]{\setlength{\rightskip}{0pt plus 5cm}bool Placement\+::overlapping\+Y\+Z (
+\begin{DoxyParamCaption}
+\item[{const {\bf Block\+With\+Pos} \&}]{b1, }
+\item[{const {\bf Block\+With\+Pos} \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_a2f0b907f20632d98c1169e7c3ad427db}
+\hypertarget{classPlacement_a7e54624dff8703581efc6be7d1af991e}{}\index{Placement@{Placement}!verify@{verify}}
+\index{verify@{verify}!Placement@{Placement}}
+\subsubsection[{verify}]{\setlength{\rightskip}{0pt plus 5cm}void Placement\+::verify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classPlacement_a7e54624dff8703581efc6be7d1af991e}
+
+
+Verify some correctness. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPlacement_a5c4c9527336f2c2c18e2c6234aad8878}{}\index{Placement@{Placement}!positions@{positions}}
+\index{positions@{positions}!Placement@{Placement}}
+\subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Block\+With\+Pos}$>$ Placement\+::positions\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_a5c4c9527336f2c2c18e2c6234aad8878}
+\hypertarget{classPlacement_a7061408d3dac137528697314b5825daf}{}\index{Placement@{Placement}!x1@{x1}}
+\index{x1@{x1}!Placement@{Placement}}
+\subsubsection[{x1}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::x1\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_a7061408d3dac137528697314b5825daf}
+
+
+Six boundary. 
+
+\hypertarget{classPlacement_acb44c4ead672e30af3b6cf3758db090c}{}\index{Placement@{Placement}!x2@{x2}}
+\index{x2@{x2}!Placement@{Placement}}
+\subsubsection[{x2}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::x2\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_acb44c4ead672e30af3b6cf3758db090c}
+\hypertarget{classPlacement_a4c17ed499418886700bf8e4d4ee45047}{}\index{Placement@{Placement}!y1@{y1}}
+\index{y1@{y1}!Placement@{Placement}}
+\subsubsection[{y1}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::y1\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_a4c17ed499418886700bf8e4d4ee45047}
+\hypertarget{classPlacement_ae7b89409ab130ba3d7c268faf7175b40}{}\index{Placement@{Placement}!y2@{y2}}
+\index{y2@{y2}!Placement@{Placement}}
+\subsubsection[{y2}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::y2\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_ae7b89409ab130ba3d7c268faf7175b40}
+\hypertarget{classPlacement_a3e9d90f2d85b6641d2fd7d74d2600394}{}\index{Placement@{Placement}!z1@{z1}}
+\index{z1@{z1}!Placement@{Placement}}
+\subsubsection[{z1}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::z1\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_a3e9d90f2d85b6641d2fd7d74d2600394}
+\hypertarget{classPlacement_aed710205286315a2a14f8cc2ceacd267}{}\index{Placement@{Placement}!z2@{z2}}
+\index{z2@{z2}!Placement@{Placement}}
+\subsubsection[{z2}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::z2\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_aed710205286315a2a14f8cc2ceacd267}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Placement_8h}{Placement.\+h}\item 
+\hyperlink{Placement_8cpp}{Placement.\+cpp}\end{DoxyCompactItemize}

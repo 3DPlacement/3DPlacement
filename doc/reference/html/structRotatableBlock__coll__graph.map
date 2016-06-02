@@ -1,0 +1,3 @@
+<map id="RotatableBlock" name="RotatableBlock">
+<area shape="rect" id="node2" href="$structBlock.html" title="Defines a block out of the coordinates. This is determined by input and will not modified in the algo..." alt="" coords="33,5,108,127"/>
+</map>

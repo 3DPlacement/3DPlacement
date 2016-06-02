@@ -1,0 +1,134 @@
+\hypertarget{structRotatableBlock}{}\section{Rotatable\+Block Struct Reference}
+\label{structRotatableBlock}\index{Rotatable\+Block@{Rotatable\+Block}}
+
+
+{\ttfamily \#include $<$Block.\+h$>$}
+
+
+
+Collaboration diagram for Rotatable\+Block\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{structRotatableBlock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} \{ \\*
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a4e5874dc7e7f4a793efd2b3abecb34c9}{X\+Y\+Z} = 0x012, 
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a8accfa9f236c3d421cf1863035093346}{X\+Z\+Y} = 0x021, 
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465ad22b8f1162e159ff4a3137db9c1e34d0}{Y\+X\+Z} = 0x102, 
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a930b4b7cd8e1df5745dc7a6a4bf2355e}{Y\+Z\+X} = 0x120, 
+\\*
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a0cd2dbb032ea58008adafa343d3e8111}{Z\+X\+Y} = 0x201, 
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465abae8fc51a17af85462aa1e971e379c17}{Z\+Y\+X} = 0x210
+ \}
+\begin{DoxyCompactList}\small\item\em Y\+Z\+X means w\textquotesingle{}=l, h\textquotesingle{}=w, l\textquotesingle{}=h. (l\textquotesingle{},w\textquotesingle{},h\textquotesingle{}) is current one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structRotatableBlock_ac9c0dd6af399b054a0011332b0b7fa77}{Rotatable\+Block} (const \hyperlink{structBlock}{Block} $\ast$\+\_\+block, \hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} \+\_\+rotation)
+\item 
+double \hyperlink{structRotatableBlock_a0ed9c1f491d20ef51f1a655bf9ebbb2f}{get\+L} () const 
+\item 
+double \hyperlink{structRotatableBlock_a7516433d41793095435f3e99ef88edae}{get\+W} () const 
+\item 
+double \hyperlink{structRotatableBlock_ac4f1a519af134049d68d9ee103c2aa89}{get\+H} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} \hyperlink{structRotatableBlock_a15b7b0840be5cd6f10e4acd89131cb2b}{get\+Rand\+Rotate} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structBlock}{Block} $\ast$ \hyperlink{structRotatableBlock_a7ad9b648924d8c37caa80f44841be4c7}{block}
+\item 
+\hyperlink{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} \hyperlink{structRotatableBlock_a6aa97c762ffc8ad401459003a63e6cc0}{rotation}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}{}\index{Rotatable\+Block@{Rotatable\+Block}!R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E@{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E}}
+\index{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E@{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rotatable\+Block\+::\+R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E}}\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465}
+
+
+Y\+Z\+X means w\textquotesingle{}=l, h\textquotesingle{}=w, l\textquotesingle{}=h. (l\textquotesingle{},w\textquotesingle{},h\textquotesingle{}) is current one. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{X\+Y\+Z@{X\+Y\+Z}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!X\+Y\+Z@{X\+Y\+Z}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a4e5874dc7e7f4a793efd2b3abecb34c9}{}X\+Y\+Z\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a4e5874dc7e7f4a793efd2b3abecb34c9}
+}]\index{X\+Z\+Y@{X\+Z\+Y}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!X\+Z\+Y@{X\+Z\+Y}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a8accfa9f236c3d421cf1863035093346}{}X\+Z\+Y\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a8accfa9f236c3d421cf1863035093346}
+}]\index{Y\+X\+Z@{Y\+X\+Z}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!Y\+X\+Z@{Y\+X\+Z}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465ad22b8f1162e159ff4a3137db9c1e34d0}{}Y\+X\+Z\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465ad22b8f1162e159ff4a3137db9c1e34d0}
+}]\index{Y\+Z\+X@{Y\+Z\+X}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!Y\+Z\+X@{Y\+Z\+X}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a930b4b7cd8e1df5745dc7a6a4bf2355e}{}Y\+Z\+X\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a930b4b7cd8e1df5745dc7a6a4bf2355e}
+}]\index{Z\+X\+Y@{Z\+X\+Y}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!Z\+X\+Y@{Z\+X\+Y}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a0cd2dbb032ea58008adafa343d3e8111}{}Z\+X\+Y\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465a0cd2dbb032ea58008adafa343d3e8111}
+}]\index{Z\+Y\+X@{Z\+Y\+X}!Rotatable\+Block@{Rotatable\+Block}}\index{Rotatable\+Block@{Rotatable\+Block}!Z\+Y\+X@{Z\+Y\+X}}\item[{\em 
+\hypertarget{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465abae8fc51a17af85462aa1e971e379c17}{}Z\+Y\+X\label{structRotatableBlock_ac076f0b2a72673cd4a5da5ea53b2e465abae8fc51a17af85462aa1e971e379c17}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structRotatableBlock_ac9c0dd6af399b054a0011332b0b7fa77}{}\index{Rotatable\+Block@{Rotatable\+Block}!Rotatable\+Block@{Rotatable\+Block}}
+\index{Rotatable\+Block@{Rotatable\+Block}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{Rotatable\+Block}]{\setlength{\rightskip}{0pt plus 5cm}Rotatable\+Block\+::\+Rotatable\+Block (
+\begin{DoxyParamCaption}
+\item[{const {\bf Block} $\ast$}]{\+\_\+block, }
+\item[{{\bf R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E}}]{\+\_\+rotation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structRotatableBlock_ac9c0dd6af399b054a0011332b0b7fa77}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structRotatableBlock_ac4f1a519af134049d68d9ee103c2aa89}{}\index{Rotatable\+Block@{Rotatable\+Block}!get\+H@{get\+H}}
+\index{get\+H@{get\+H}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{get\+H}]{\setlength{\rightskip}{0pt plus 5cm}double Rotatable\+Block\+::get\+H (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structRotatableBlock_ac4f1a519af134049d68d9ee103c2aa89}
+\hypertarget{structRotatableBlock_a0ed9c1f491d20ef51f1a655bf9ebbb2f}{}\index{Rotatable\+Block@{Rotatable\+Block}!get\+L@{get\+L}}
+\index{get\+L@{get\+L}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{get\+L}]{\setlength{\rightskip}{0pt plus 5cm}double Rotatable\+Block\+::get\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structRotatableBlock_a0ed9c1f491d20ef51f1a655bf9ebbb2f}
+\hypertarget{structRotatableBlock_a15b7b0840be5cd6f10e4acd89131cb2b}{}\index{Rotatable\+Block@{Rotatable\+Block}!get\+Rand\+Rotate@{get\+Rand\+Rotate}}
+\index{get\+Rand\+Rotate@{get\+Rand\+Rotate}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{get\+Rand\+Rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotatable\+Block\+::\+R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} Rotatable\+Block\+::get\+Rand\+Rotate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{structRotatableBlock_a15b7b0840be5cd6f10e4acd89131cb2b}
+\hypertarget{structRotatableBlock_a7516433d41793095435f3e99ef88edae}{}\index{Rotatable\+Block@{Rotatable\+Block}!get\+W@{get\+W}}
+\index{get\+W@{get\+W}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{get\+W}]{\setlength{\rightskip}{0pt plus 5cm}double Rotatable\+Block\+::get\+W (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structRotatableBlock_a7516433d41793095435f3e99ef88edae}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structRotatableBlock_a7ad9b648924d8c37caa80f44841be4c7}{}\index{Rotatable\+Block@{Rotatable\+Block}!block@{block}}
+\index{block@{block}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{block}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Block}$\ast$ Rotatable\+Block\+::block}\label{structRotatableBlock_a7ad9b648924d8c37caa80f44841be4c7}
+\hypertarget{structRotatableBlock_a6aa97c762ffc8ad401459003a63e6cc0}{}\index{Rotatable\+Block@{Rotatable\+Block}!rotation@{rotation}}
+\index{rotation@{rotation}!Rotatable\+Block@{Rotatable\+Block}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+O\+T\+A\+T\+E\+\_\+\+N\+A\+M\+E} Rotatable\+Block\+::rotation}\label{structRotatableBlock_a6aa97c762ffc8ad401459003a63e6cc0}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Block_8h}{Block.\+h}\end{DoxyCompactItemize}

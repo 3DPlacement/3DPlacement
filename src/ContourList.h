@@ -18,6 +18,8 @@ public:
 
         Node(const Node &) = delete;
         Node &operator=(const Node &) = delete;
+        Node(Node &&) = default;
+        Node &operator=(Node &&) = default;
     };
 
     /// Replace a segment of nodes with a node

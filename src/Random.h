@@ -20,6 +20,9 @@ public:
     /// Generate random integer in [lo,hi]
     int getRandomInt(int lo, int hi);
 
+    /// Generate random real in [lo, hi]
+    double getRandomDouble(double lo, double hi);
+
     /// Get random engine
     engine_t &getEngine() { return engine; }
 
@@ -43,6 +46,11 @@ inline Random &Random::getInstance()
 inline int Random::getRandomInt(int lo, int hi)
 {
     return std::uniform_int_distribution<int>(lo, hi)(engine);
+}
+
+inline double Random::getRandomDouble(double lo, double hi)
+{
+    return std::uniform_real_distribution<double>(lo, hi)(engine);
 }
 
 #endif // RANDOM_H_

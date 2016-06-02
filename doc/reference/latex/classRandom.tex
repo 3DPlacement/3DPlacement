@@ -1,0 +1,157 @@
+\hypertarget{classRandom}{}\section{Random Class Reference}
+\label{classRandom}\index{Random@{Random}}
+
+
+Please to this file instead of generate random numbers by yourself. It provide a consistent control of the seed.  
+
+
+
+
+{\ttfamily \#include $<$Random.\+h$>$}
+
+
+
+Collaboration diagram for Random\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classRandom__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::default\+\_\+random\+\_\+engine \hyperlink{classRandom_ab1090b767f3e771eb8f846079869d1b4}{engine\+\_\+t}
+\begin{DoxyCompactList}\small\item\em You can change this to other engines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classRandom_a7365696fe6cb07dc6c686bfde4fbf4ae}{get\+Random\+Int} (int lo, int hi)
+\begin{DoxyCompactList}\small\item\em Generate random integer in \mbox{[}lo,hi\mbox{]}. \end{DoxyCompactList}\item 
+double \hyperlink{classRandom_a721d558ed4bf72c63ceec816c5819129}{get\+Random\+Double} (double lo, double hi)
+\begin{DoxyCompactList}\small\item\em Generate random real in \mbox{[}lo, hi\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{classRandom_ab1090b767f3e771eb8f846079869d1b4}{engine\+\_\+t} \& \hyperlink{classRandom_aa4b65c7cd8e0ada6c0dca5937236dda0}{get\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Get random engine. \end{DoxyCompactList}\item 
+\hyperlink{classRandom_a9bfadeaa4adc5ac44142d000b1c99441}{Random} (const \hyperlink{classRandom}{Random} \&)=delete
+\item 
+\hyperlink{classRandom}{Random} \& \hyperlink{classRandom_acc7a4d85a416a090cde22c9273e01f1e}{operator=} (const \hyperlink{classRandom}{Random} \&)=delete
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRandom}{Random} \& \hyperlink{classRandom_a2aa30d2f678fc76f75efc60356c6ea4d}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRandom_acb76b49c3903a3c4fb67fd216341f08d}{Random} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRandom_ab1090b767f3e771eb8f846079869d1b4}{engine\+\_\+t} \hyperlink{classRandom_a273901a5b482668a1a0204b8691317e1}{engine}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRandom}{Random} $\ast$ \hyperlink{classRandom_a841a26400e4205f27cfb1ab4acaccb46}{instance} = N\+U\+L\+L
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Please to this file instead of generate random numbers by yourself. It provide a consistent control of the seed. 
+
+\hyperlink{classRandom}{Random} number generator. Define N\+D\+E\+B\+U\+G to enable generating seed accroding to time. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classRandom_ab1090b767f3e771eb8f846079869d1b4}{}\index{Random@{Random}!engine\+\_\+t@{engine\+\_\+t}}
+\index{engine\+\_\+t@{engine\+\_\+t}!Random@{Random}}
+\subsubsection[{engine\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::default\+\_\+random\+\_\+engine {\bf Random\+::engine\+\_\+t}}\label{classRandom_ab1090b767f3e771eb8f846079869d1b4}
+
+
+You can change this to other engines. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRandom_a9bfadeaa4adc5ac44142d000b1c99441}{}\index{Random@{Random}!Random@{Random}}
+\index{Random@{Random}!Random@{Random}}
+\subsubsection[{Random}]{\setlength{\rightskip}{0pt plus 5cm}Random\+::\+Random (
+\begin{DoxyParamCaption}
+\item[{const {\bf Random} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classRandom_a9bfadeaa4adc5ac44142d000b1c99441}
+\hypertarget{classRandom_acb76b49c3903a3c4fb67fd216341f08d}{}\index{Random@{Random}!Random@{Random}}
+\index{Random@{Random}!Random@{Random}}
+\subsubsection[{Random}]{\setlength{\rightskip}{0pt plus 5cm}Random\+::\+Random (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRandom_acb76b49c3903a3c4fb67fd216341f08d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRandom_aa4b65c7cd8e0ada6c0dca5937236dda0}{}\index{Random@{Random}!get\+Engine@{get\+Engine}}
+\index{get\+Engine@{get\+Engine}!Random@{Random}}
+\subsubsection[{get\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf engine\+\_\+t}\& Random\+::get\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRandom_aa4b65c7cd8e0ada6c0dca5937236dda0}
+
+
+Get random engine. 
+
+\hypertarget{classRandom_a2aa30d2f678fc76f75efc60356c6ea4d}{}\index{Random@{Random}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Random@{Random}}
+\subsubsection[{get\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Random} \& Random\+::get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classRandom_a2aa30d2f678fc76f75efc60356c6ea4d}
+\hypertarget{classRandom_a721d558ed4bf72c63ceec816c5819129}{}\index{Random@{Random}!get\+Random\+Double@{get\+Random\+Double}}
+\index{get\+Random\+Double@{get\+Random\+Double}!Random@{Random}}
+\subsubsection[{get\+Random\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double Random\+::get\+Random\+Double (
+\begin{DoxyParamCaption}
+\item[{double}]{lo, }
+\item[{double}]{hi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRandom_a721d558ed4bf72c63ceec816c5819129}
+
+
+Generate random real in \mbox{[}lo, hi\mbox{]}. 
+
+\hypertarget{classRandom_a7365696fe6cb07dc6c686bfde4fbf4ae}{}\index{Random@{Random}!get\+Random\+Int@{get\+Random\+Int}}
+\index{get\+Random\+Int@{get\+Random\+Int}!Random@{Random}}
+\subsubsection[{get\+Random\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int Random\+::get\+Random\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{lo, }
+\item[{int}]{hi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRandom_a7365696fe6cb07dc6c686bfde4fbf4ae}
+
+
+Generate random integer in \mbox{[}lo,hi\mbox{]}. 
+
+\hypertarget{classRandom_acc7a4d85a416a090cde22c9273e01f1e}{}\index{Random@{Random}!operator=@{operator=}}
+\index{operator=@{operator=}!Random@{Random}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Random}\& Random\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Random} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classRandom_acc7a4d85a416a090cde22c9273e01f1e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRandom_a273901a5b482668a1a0204b8691317e1}{}\index{Random@{Random}!engine@{engine}}
+\index{engine@{engine}!Random@{Random}}
+\subsubsection[{engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf engine\+\_\+t} Random\+::engine\hspace{0.3cm}{\ttfamily [private]}}\label{classRandom_a273901a5b482668a1a0204b8691317e1}
+\hypertarget{classRandom_a841a26400e4205f27cfb1ab4acaccb46}{}\index{Random@{Random}!instance@{instance}}
+\index{instance@{instance}!Random@{Random}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Random} $\ast$ Random\+::instance = N\+U\+L\+L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classRandom_a841a26400e4205f27cfb1ab4acaccb46}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Random_8h}{Random.\+h}\item 
+\hyperlink{Random_8cpp}{Random.\+cpp}\end{DoxyCompactItemize}

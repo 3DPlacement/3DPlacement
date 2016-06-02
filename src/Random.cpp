@@ -1,5 +1,5 @@
 #include <ctime>
-#include "random.h"
+#include "Random.h"
 
 #ifdef NDEBUG
     #define SEED (time(0))
