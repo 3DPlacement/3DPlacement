@@ -18,7 +18,7 @@ ContourList::Node &ContourList::Node::operator=(ContourList::Node &&rhs)
     return *this;
 }
 
-ContourList::Node *ContourList::replace(ContourList::Node *p, double _z1, double _z2)
+ContourList::Node *ContourList::replace(ContourList::Node *p, double _z1, double _z2, double width)
 {
     assert(p != NULL);
     Node *p1(p), *p2(p), *q1(NULL), *q2(NULL), *q3(NULL);
@@ -34,7 +34,7 @@ ContourList::Node *ContourList::replace(ContourList::Node *p, double _z1, double
 
     if (p1->z1 < _z1)
         q1 = new Node(_y, p1->z1, _z1);
-    q2 = new Node(_y, _z1, _z2);
+    q2 = new Node(_y + width, _z1, _z2);
     if (p2->z2 > _z2)
         q3 = new Node(_y, _z2, p2->z2);
 
@@ -81,9 +81,19 @@ ContourList::Node *ContourList::init(double _y)
 
 void ContourList::connect(ContourList::Node *p, ContourList::Node *q)
 {
-    assert(p != q);
+    assert(!p || p != q);
     assert(!p || !q || (p->prev != q && q->next != p));
-    if (p) p->next = q;
-    if (q) q->prev = p;
+    if (p)
+    {
+        if (p->next)
+            assert(p->next->prev == p), p->next->prev = NULL;
+        p->next = q;
+    }
+    if (q)
+    {
+        if (q->prev)
+            assert(q->prev->next == q), q->prev->next = NULL;
+        q->prev = p;
+    }
 }
 

@@ -5,7 +5,10 @@
 #include <vector>
 #include "Block.h"
 
-/// A compact placement of blocks
+/**
+ * A compact placement of blocks.
+ * Difference < 1e-7 will be considered as error
+ */
 class Placement
 {
 public:
@@ -53,11 +56,14 @@ private:
     double x1, x2, y1, y2, z1, z2;
     /// Total volume of every blocks
     double netVolume;
+    
+    /// Error tolerance
+    static constexpr const double eps = 1e-7;
 };
 
 inline bool Placement::overlapping2D(double y1, double z1, double w1, double h1, double y2, double z2, double w2, double h2)
 {
-    return ! (y1 + w1 <= y2 || y1 >= y2 + w2 || z1 + h1 <= z2 || z1 >= z2 + h2);
+    return ! (y1 + w1 <= y2 + eps || y1 + eps >= y2 + w2 || z1 + h1 <= z2 + eps || z1 + eps >= z2 + h2);
 }
 
 inline bool Placement::overlappingXY(const Placement::BlockWithPos &b1, const Placement::BlockWithPos &b2)

@@ -10,9 +10,9 @@
 #include "Random.h"
 #include "Placement.h"
 
-const int blockNum = 5;
-const int testNum = 10;
-const int perturbNum = 10;
+const int blockNum = 500;
+const int testNum = 100;
+const int perturbNum = 100;
 
 const double maxBlockSize = 10;
 

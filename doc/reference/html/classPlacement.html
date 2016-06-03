@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classPlacement-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Placement Class Reference</div>  </div>
@@ -165,9 +166,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:afe51f89ddfdb2d27b68449d96f50e24d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#afe51f89ddfdb2d27b68449d96f50e24d">netVolume</a></td></tr>
 <tr class="memdesc:afe51f89ddfdb2d27b68449d96f50e24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total volume of every blocks.  <a href="#afe51f89ddfdb2d27b68449d96f50e24d">More...</a><br /></td></tr>
 <tr class="separator:afe51f89ddfdb2d27b68449d96f50e24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a8af99bcb7758493e48ac8270023f96d7"><td class="memItemLeft" align="right" valign="top">static constexpr const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#a8af99bcb7758493e48ac8270023f96d7">eps</a> = 1e-7</td></tr>
+<tr class="memdesc:a8af99bcb7758493e48ac8270023f96d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error tolerance.  <a href="#a8af99bcb7758493e48ac8270023f96d7">More...</a><br /></td></tr>
+<tr class="separator:a8af99bcb7758493e48ac8270023f96d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A compact placement of blocks. </p>
+<p>Difference &lt; 1e-7 will be considered as error </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa0020a3dd0bedb34998968adfacf8a4e"></a>
 <div class="memitem">
@@ -530,6 +538,28 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8af99bcb7758493e48ac8270023f96d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const double Placement::eps = 1e-7</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error tolerance. </p>
+
+</div>
+</div>
 <a class="anchor" id="afe51f89ddfdb2d27b68449d96f50e24d"></a>
 <div class="memitem">
 <div class="memproto">

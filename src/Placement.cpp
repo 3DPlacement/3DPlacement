@@ -21,21 +21,24 @@ void Placement::verify() const
 {
     for (const auto &item1 : positions)
     {
-        double nearX(0), nearY(0), nearZ(0);
+        double nearX(0); //, nearY(0), nearZ(0);
         for (const auto &item2 : positions)
             if (item1.block.block != item2.block.block)
             {
                 assert(! overlappingXYZ(item1, item2)); // no overlapping
                 if (overlappingYZ(item1, item2) && item2.x < item1.x)
                     nearX = std::max(nearX, item2.x + item2.block.getL());
-                if (overlappingXZ(item1, item2) && item2.y < item1.y)
+                /*if (overlappingXZ(item1, item2) && item2.y < item1.y)
                     nearY = std::max(nearY, item2.y + item2.block.getW());
                 if (overlappingXY(item1, item2) && item2.z < item1.z)
-                    nearZ = std::max(nearZ, item2.z + item2.block.getH());
+                    nearZ = std::max(nearZ, item2.z + item2.block.getH());*/
             }
-        assert(nearX == item1.x && nearY == item1.y && nearZ == item1.z); // is compact
+        assert(fabs(nearX - item1.x) < eps); // is compact
+        // It may be uncompact in y or z direction.
+        /*assert(fabs(nearY - item1.y) < eps);
+        assert(fabs(nearZ - item1.z) < eps);*/
     }
-    assert(getVolume() >= getNetVolume() - 1e-7);
+    assert(getVolume() >= getNetVolume() - eps);
 }
 
 #endif // NDEBUG

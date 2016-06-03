@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <set>
+#include <list>
 #include <vector>
 #include "Block.h"
 #include "Random.h"
@@ -18,23 +19,34 @@ public:
     /// Randomly initialize a tree with given blocks
     void initialize(const std::vector<Block> &blocks);
 
-    /// Randomly initialize a tree with given const blocks pointers
-    /// @param blocks The given blocks. Shouldn't be const &
+    /**
+     * Randomly initialize a tree with given const blocks pointers
+     * @param blocks The given blocks. Shouldn't be const &
+     */
     void initialize(std::vector<const Block*> blocks);
 
-    /// Build a placement accroding to this tree
+    /**
+     * Build a placement accroding to this tree.
+     * O(n). n is the number of the nodes.
+     */
     Placement getPlacement() const;
 
-    /// Randomly move one node to another position
-    /// O(h). h is the height of the tree.
+    /**
+     * Randomly move one node to another position.
+     * O(h). h is the height of the tree.
+     */
     void randomMove();
 
-    /// Randomly swap two nodes
-    /// O(1).
+    /**
+     * Randomly swap two nodes.
+     * O(1).
+     */
     void randomSwap();
 
-    /// Randomly rotate one node's block
-    /// O(1).
+    /**
+     * Randomly rotate one node's block.
+     * O(1).
+     */
     void randomRotate();
 
     TTree(const TTree &) = delete;
@@ -43,8 +55,10 @@ public:
     TTree &operator=(TTree &&) = default;
 
 #ifndef NDEBUG
-    /// Verify the some correctness of the tree
-    /// Uses assert
+    /**
+     * Verify the some correctness of the tree.
+     * Uses assert.
+     */
     void verify() const;
 #endif // NDEBUG
 
@@ -63,14 +77,30 @@ private:
         Node &operator=(const Node &) = delete;
         Node(Node &&);
         Node &operator=(Node &&);
+
+#ifndef NDEBUG
+        /// Print debug message
+        void printMsg() const;
+#endif // NDEBUG
     };
 
     /// Used by TTree::initialize
     void initializeRecur(Node *&p, size_t id, const std::vector<const Block*> &blocks);
 
-    /// Used by TTree::getPlacement
-    /// @return The node replaced q
-    ContourList::Node *getPlacementRecur(const Node *p, ContourList::Node *q, double z, Placement &placement) const;
+    struct subtree_t
+    {
+        const Node *root;
+        double minY, minZ;
+        subtree_t(const Node *_root, double _minY, double _minZ)
+            : root(_root), minY(_minY), minZ(_minZ) {}
+    };
+
+    /**
+     * Used by TTree::getPlacement
+     * @return The node replaced q
+     */
+    ContourList::Node *getPlacementRecur(
+        const Node *p, ContourList::Node *q, double z, Placement &placement, std::list<subtree_t> &subtrees) const;
 
     /// Randomly choose a node
     Node *randNode();
@@ -81,17 +111,21 @@ private:
     /// Swap content of two node but not affecting the tree structure
     void swapNode(Node *p, Node *q);
 
-    /// Detach a node from the tree
-    /// This is a random procedure
-    /// @return The node
+    /**
+     * Detach a node from the tree.
+     * This is a random procedure.
+     * @return The node
+     */
     Node *detach(Node *p);
 
     /// Randomly insert node `child` as child of node `parent`
     void insert(Node *parent, Node *child);
 
 #ifndef NDEBUG
-    /// Used by Tree::verify
-    /// @param p Should be * const &, instead of const * const &. Type conversion will change the address
+    /**
+     * Used by Tree::verify
+     * @param p Should be * const &, instead of const * const &. Type conversion will change the address
+     */
     void verifyRecur(Node* const& p, std::set<const Block*> &blocks) const;
 #endif // NDEBUG
 

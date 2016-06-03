@@ -3,11 +3,14 @@
 
 #include <cassert>
 #include <cstdlib>
+#include <iostream>
 #include "Random.h"
 
-/// Defines a block out of the coordinates.
-/// This is determined by input and will not modified
-/// in the algorithm.
+/**
+ * Defines a block out of the coordinates.
+ * This is determined by input and will not modified
+ * in the algorithm.
+ */
 struct Block
 {
     double l, w, h; /// corresponding to x, y, z axies.
@@ -45,17 +48,17 @@ struct RotatableBlock
 
 inline double RotatableBlock::getL() const
 {
-    return (rotation & 0x100) == 0x000 ? block->l : (rotation & 0x010) == 0x000 ? block->w : block->h;
+    return (rotation & 0xF00) == 0x000 ? block->l : (rotation & 0x0F0) == 0x000 ? block->w : block->h;
 }
 
 inline double RotatableBlock::getW() const
 {
-    return (rotation & 0x100) == 0x100 ? block->l : (rotation & 0x010) == 0x010 ? block->w : block->h;
+    return (rotation & 0xF00) == 0x100 ? block->l : (rotation & 0x0F0) == 0x010 ? block->w : block->h;
 }
 
 inline double RotatableBlock::getH() const
 {
-    return (rotation & 0x100) == 0x200 ? block->l : (rotation & 0x010) == 0x020 ? block->w : block->h;
+    return (rotation & 0xF00) == 0x200 ? block->l : (rotation & 0x0F0) == 0x020 ? block->w : block->h;
 }
 
 inline RotatableBlock::ROTATE_NAME RotatableBlock::getRandRotate()

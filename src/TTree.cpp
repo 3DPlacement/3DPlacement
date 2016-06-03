@@ -33,26 +33,30 @@ void TTree::initializeRecur(Node *&p, size_t id, const std::vector<const Block*>
 Placement TTree::getPlacement() const
 {
     Placement ret;
-    getPlacementRecur(root, ContourList::init(0), 0, ret);
+    std::list<subtree_t> subtrees = { subtree_t(root, 0, 0) };
+    for (auto i = subtrees.begin(); i != subtrees.end(); i++)
+    {
+        ContourList::Node *q = getPlacementRecur(i->root, ContourList::init(i->minY), i->minZ, ret, subtrees);
+        ContourList::deleteSeg(NULL, q, NULL);
+    }
     return ret;
 }
 
-ContourList::Node *TTree::getPlacementRecur(const TTree::Node *p, ContourList::Node *q, double z, Placement &placement) const
+ContourList::Node *TTree::getPlacementRecur(
+    const TTree::Node *p, ContourList::Node *q, double z, Placement &placement, std::list<TTree::subtree_t> &subtrees) const
 {
-    q = ContourList::replace(q, z, z + p->block.getH());
-    placement.addBlock(p->block, q->y, z);
+    q = ContourList::replace(q, z, z + p->block.getH(), p->block.getW());
+    double _y = q->y - p->block.getW();
+    placement.addBlock(p->block, _y, z);
 
-    // recur. z+ first, y+ second, x+ third. MUST.
+    // recur. z+ first, y+ second. MUST.
     if (p->l)
-        getPlacementRecur(p->l, q->getNext(), z + p->block.getH(), placement);
+        getPlacementRecur(p->l, q->getNext(), z + p->block.getH(), placement, subtrees);
     if (p->m)
-        q = getPlacementRecur(p->m, q, z, placement);
+        q = getPlacementRecur(p->m, q, z, placement, subtrees);
+
     if (p->r)
-    {
-        double _y = q->y;
-        ContourList::deleteSeg(NULL, q, NULL);
-        getPlacementRecur(p->r, ContourList::init(_y), z, placement);
-    }
+        subtrees.emplace_back(p->r, _y, z);
     return q;
 }
 
@@ -107,6 +111,13 @@ void TTree::insert(Node *parent, Node *child)
 }
 
 #ifndef NDEBUG
+
+void TTree::Node::printMsg() const
+{
+    std::cout << "Node " << this << std::endl;
+    std::cout << "  " << block.block->id << " : " << block.getL() << " X " << block.getW() << " X " << block.getH() << std::endl;
+    std::cout << "  " << l << " , " << m << " , " << r << std::endl;
+}
 
 void TTree::verify() const
 {

@@ -1,5 +1,7 @@
-/// Please to this file instead of generate random numbers
-/// by yourself. It provide a consistent control of the seed.
+/**
+ * Please to this file instead of generate random numbers
+ * by yourself. It provide a consistent control of the seed.
+ */
 
 #ifndef RANDOM_H_
 #define RANDOM_H_
@@ -7,8 +9,10 @@
 #include <cstdlib>
 #include <random>
 
-/// Random number generator.
-/// Define NDEBUG to enable generating seed accroding to time.
+/**
+ * Random number generator.
+ * Define NDEBUG to enable generating seed accroding to time.
+ */
 class Random
 {
 public:

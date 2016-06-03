@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Defines a vertical contour doubly-linked list. used by <a class="el" href="classTTree.html">TTree</a>. static class.  
+<p>Defines a vertical contour doubly-linked list.  
  <a href="classContourList.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ContourList_8h_source.html">ContourList.h</a>&gt;</code></p>
@@ -111,11 +111,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a62250bf789d26d3392001287047e8d13"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#a62250bf789d26d3392001287047e8d13">replace</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> *p, double _z1, double _z2)</td></tr>
-<tr class="memdesc:a62250bf789d26d3392001287047e8d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a segment of nodes with a node.  <a href="#a62250bf789d26d3392001287047e8d13">More...</a><br /></td></tr>
-<tr class="separator:a62250bf789d26d3392001287047e8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e4108f67b534548a608b43b6de5d2d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#a22e4108f67b534548a608b43b6de5d2d">replace</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> *p, double _z1, double _z2, double width)</td></tr>
+<tr class="memdesc:a22e4108f67b534548a608b43b6de5d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a segment of nodes with a node.  <a href="#a22e4108f67b534548a608b43b6de5d2d">More...</a><br /></td></tr>
+<tr class="separator:a22e4108f67b534548a608b43b6de5d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add57efb2cdaba0626be3138c91f5d43a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#add57efb2cdaba0626be3138c91f5d43a">deleteSeg</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> *l, <a class="el" href="structContourList_1_1Node.html">Node</a> *p, <a class="el" href="structContourList_1_1Node.html">Node</a> *r)</td></tr>
-<tr class="memdesc:add57efb2cdaba0626be3138c91f5d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a segement of nodes starting from p, next to l, right to r. i.e. range (l, r).  <a href="#add57efb2cdaba0626be3138c91f5d43a">More...</a><br /></td></tr>
+<tr class="memdesc:add57efb2cdaba0626be3138c91f5d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a segement of nodes starting from p, next to l, right to r.  <a href="#add57efb2cdaba0626be3138c91f5d43a">More...</a><br /></td></tr>
 <tr class="separator:add57efb2cdaba0626be3138c91f5d43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a9caa54290e0ca516375429a52cf768"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#a4a9caa54290e0ca516375429a52cf768">init</a> (double _y)</td></tr>
 <tr class="memdesc:a4a9caa54290e0ca516375429a52cf768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a node with y=_y, z1=-inf, z2=inf.  <a href="#a4a9caa54290e0ca516375429a52cf768">More...</a><br /></td></tr>
@@ -125,7 +125,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a8aecef9a5d7ebe21b57b0e2af079fec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines a vertical contour doubly-linked list. used by <a class="el" href="classTTree.html">TTree</a>. static class. </p>
+<div class="textblock"><p>Defines a vertical contour doubly-linked list. </p>
+<p>used by <a class="el" href="classTTree.html">TTree</a>. static class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a8aecef9a5d7ebe21b57b0e2af079fec4"></a>
 <div class="memitem">
@@ -208,8 +209,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Delete a segement of nodes starting from p, next to l, right to r. i.e. range (l, r). </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Delete a segement of nodes starting from p, next to l, right to r. </p>
+<p>i.e. range (l, r). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>Must in the range. </td></tr>
     <tr><td class="paramname">l,r</td><td>Can be set to NULL to delete all. </td></tr>
@@ -245,7 +246,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a62250bf789d26d3392001287047e8d13"></a>
+<a class="anchor" id="a22e4108f67b534548a608b43b6de5d2d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -268,7 +269,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>_z2</em>&#160;</td>
+          <td class="paramname"><em>_z2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -284,6 +291,13 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Replace a segment of nodes with a node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_z1,_z2</td><td>The z range of the new block </td></tr>
+    <tr><td class="paramname">width</td><td>The y width of the new block </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>The new node </dd></dl>
 
 </div>

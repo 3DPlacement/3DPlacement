@@ -71,10 +71,17 @@ double \hyperlink{classPlacement_aed710205286315a2a14f8cc2ceacd267}{z2}
 \item 
 double \hyperlink{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}{net\+Volume}
 \begin{DoxyCompactList}\small\item\em Total volume of every blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const double \hyperlink{classPlacement_a8af99bcb7758493e48ac8270023f96d7}{eps} = 1e-\/7
+\begin{DoxyCompactList}\small\item\em Error tolerance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 A compact placement of blocks. 
+
+Difference $<$ 1e-\/7 will be considered as error 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classPlacement_aa0020a3dd0bedb34998968adfacf8a4e}{}\index{Placement@{Placement}!Placement@{Placement}}
@@ -201,6 +208,13 @@ Verify some correctness.
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classPlacement_a8af99bcb7758493e48ac8270023f96d7}{}\index{Placement@{Placement}!eps@{eps}}
+\index{eps@{eps}!Placement@{Placement}}
+\subsubsection[{eps}]{\setlength{\rightskip}{0pt plus 5cm}constexpr const double Placement\+::eps = 1e-\/7\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classPlacement_a8af99bcb7758493e48ac8270023f96d7}
+
+
+Error tolerance. 
+
 \hypertarget{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}{}\index{Placement@{Placement}!net\+Volume@{net\+Volume}}
 \index{net\+Volume@{net\+Volume}!Placement@{Placement}}
 \subsubsection[{net\+Volume}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::net\+Volume\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}
