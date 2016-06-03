@@ -5,16 +5,6 @@
 #include "Random.h"
 #include "Placement.h"
 
-void TTree::deleteRecur(Node *&p)
-{
-    if (!p) return;
-    deleteRecur(p->l);
-    deleteRecur(p->m);
-    deleteRecur(p->r);
-    delete p;
-    p = NULL;
-}
-
 void TTree::initialize(const std::vector<Block> &blocks)
 {
     std::vector<const Block*> blockPtrs;
@@ -43,26 +33,40 @@ void TTree::initializeRecur(Node *&p, size_t id, const std::vector<const Block*>
 Placement TTree::getPlacement() const
 {
     Placement ret;
-    getPlacementRecur(root, new ContourList::Node(0, -INFINITY, INFINITY), 0, ret);
+    getPlacementRecur(root, ContourList::init(0), 0, ret);
     return ret;
 }
 
-void TTree::getPlacementRecur(const TTree::Node *p, ContourList::Node *q, double z, Placement &placement) const
+ContourList::Node *TTree::getPlacementRecur(const TTree::Node *p, ContourList::Node *q, double z, Placement &placement) const
 {
     q = ContourList::replace(q, z, z + p->block.getH());
     placement.addBlock(p->block, q->y, z);
 
     // recur. z+ first, y+ second, x+ third. MUST.
     if (p->l)
-        getPlacementRecur(p->l, q->next, z + p->block.getH(), placement);
+        getPlacementRecur(p->l, q->getNext(), z + p->block.getH(), placement);
     if (p->m)
-        getPlacementRecur(p->m, q, z, placement);
+        q = getPlacementRecur(p->m, q, z, placement);
     if (p->r)
     {
         double _y = q->y;
-        ContourList::deleteSeg(q, NULL, NULL);
-        getPlacementRecur(p->r, new ContourList::Node(_y, -INFINITY, INFINITY), z, placement);
+        ContourList::deleteSeg(NULL, q, NULL);
+        getPlacementRecur(p->r, ContourList::init(_y), z, placement);
     }
+    return q;
+}
+
+TTree::Node::Node(Node &&rhs)
+    : block(rhs.block), l(rhs.l), m(rhs.m), r(rhs.r), in(rhs.in)
+{
+    *in = this;
+}
+
+TTree::Node &TTree::Node::operator=(TTree::Node &&rhs)
+{
+    block = rhs.block, l = rhs.l, m = rhs.m, r = rhs.r, in = rhs.in;
+    *in = this;
+    return *this;
 }
 
 void TTree::swapNode(TTree::Node *p, TTree::Node *q)
@@ -111,7 +115,7 @@ void TTree::verify() const
     assert(blocks.size() == pool.size());
 }
 
-void TTree::verifyRecur(const Node* const& p, std::set<const Block*> &blocks) const
+void TTree::verifyRecur(Node* const& p, std::set<const Block*> &blocks) const
 {
     blocks.insert(p->block.block);
     assert(&p == p->in);

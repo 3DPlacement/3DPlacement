@@ -3,6 +3,21 @@
 #include <algorithm>
 #include "ContourList.h"
 
+ContourList::Node::Node(ContourList::Node &&rhs)
+    : y(rhs.y), z1(rhs.z1), z2(rhs.z2), prev(rhs.prev), next(rhs.next)
+{
+    ContourList::connect(prev, this);
+    ContourList::connect(this, next);
+}
+
+ContourList::Node &ContourList::Node::operator=(ContourList::Node &&rhs)
+{
+    y = rhs.y, z1 = rhs.z1, z2 = rhs.z2, prev = rhs.prev, next = rhs.next;
+    ContourList::connect(prev, this);
+    ContourList::connect(this, next);
+    return *this;
+}
+
 ContourList::Node *ContourList::replace(ContourList::Node *p, double _z1, double _z2)
 {
     assert(p != NULL);
@@ -24,13 +39,13 @@ ContourList::Node *ContourList::replace(ContourList::Node *p, double _z1, double
         q3 = new Node(_y, _z2, p2->z2);
 
     if (q1)
-        q2->prev = q1, q1->prev = p1->prev, p1->prev->next = q1;
+        connect(p1->prev, q1), connect(q1, q2);
     else
-        q2->prev = p1->prev, p1->prev->next = q2;
+        connect(p1->prev, q2);
     if (q3)
-        q2->next = q3, q3->next = p2->next, p2->next->prev = q3;
+        connect(q2, q3), connect(q3, p2->next);
     else
-        q2->next = p2->next, p2->next->prev = q2;
+        connect(q2, p2->next);
     deleteSeg(p1->prev, p, p2->next);
     return q2;
 }
@@ -51,5 +66,24 @@ void ContourList::deleteSeg(ContourList::Node *l, ContourList::Node *p, ContourL
         q = _q;
     }
     delete p;
+}
+
+ContourList::Node *ContourList::init(double _y)
+{
+    /*Node *p = new Node(_y, -INFINITY, INFINITY),
+         *d = new Node(_y, -INFINITY, -INFINITY),
+         *u = new Node(_y, INFINITY, INFINITY);
+    connect(d, p);
+    connect(p, u);
+    return p;*/
+    return new Node(_y, -INFINITY, INFINITY);
+}
+
+void ContourList::connect(ContourList::Node *p, ContourList::Node *q)
+{
+    assert(p != q);
+    assert(!p || !q || (p->prev != q && q->next != p));
+    if (p) p->next = q;
+    if (q) q->prev = p;
 }
 

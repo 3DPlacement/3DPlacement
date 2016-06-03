@@ -37,6 +37,7 @@ int main()
         Placement placement;
         placement = tree.getPlacement();
         placement.verify();
+        std::cout << "  Volume = " << placement.getVolume() << std::endl;
         for (int j = 0; j < perturbNum; j++)
         {
             std::cout << "  Perturb " << j << std::endl;
@@ -57,6 +58,7 @@ int main()
             tree.verify();
             placement = tree.getPlacement();
             placement.verify();
+            std::cout << "  Volume = " << placement.getVolume() << std::endl;
         }
     }
     return 0;

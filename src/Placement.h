@@ -10,7 +10,7 @@ class Placement
 {
 public:
     Placement()
-        : x1(INFINITY), x2(-INFINITY), y1(INFINITY), y2(-INFINITY), z1(INFINITY), z2(-INFINITY) {}
+        : x1(INFINITY), x2(-INFINITY), y1(INFINITY), y2(-INFINITY), z1(INFINITY), z2(-INFINITY), netVolume(0) {}
 
     struct BlockWithPos
     {
@@ -26,6 +26,8 @@ public:
 
     /// Get the volume of the bounding box
     double getVolume() const { return (x2 - x1) * (y2 - y1) * (z2 - z1); }
+    /// Get total volume of every blocks
+    double getNetVolume() const { return netVolume; }
 
     /// Add one block into this placement
     void addBlock(const RotatableBlock &_block, double _y, double _z);
@@ -49,6 +51,8 @@ private:
 
     /// Six boundary
     double x1, x2, y1, y2, z1, z2;
+    /// Total volume of every blocks
+    double netVolume;
 };
 
 inline bool Placement::overlapping2D(double y1, double z1, double w1, double h1, double y2, double z2, double w2, double h2)

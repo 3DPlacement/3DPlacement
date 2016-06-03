@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="structContourList_1_1Node-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ContourList::Node Struct Reference</div>  </div>
@@ -103,17 +105,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for ContourList::Node:</div>
 <div class="dyncontent">
 <div class="center"><img src="structContourList_1_1Node__coll__graph.png" border="0" usemap="#ContourList_1_1Node_coll__map" alt="Collaboration graph"/></div>
+<map name="ContourList_1_1Node_coll__map" id="ContourList_1_1Node_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac4e773feed1974871bd67d8d9575d3b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#ac4e773feed1974871bd67d8d9575d3b9">Node</a> (double _y, double _z1, double _z2)</td></tr>
-<tr class="memdesc:ac4e773feed1974871bd67d8d9575d3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">prev-&gt;z2 == z1, z2 == next-&gt;z1  <a href="#ac4e773feed1974871bd67d8d9575d3b9">More...</a><br /></td></tr>
-<tr class="separator:ac4e773feed1974871bd67d8d9575d3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a6173b45499956934fea3f0f988937"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#aa5a6173b45499956934fea3f0f988937">Node</a> (const <a class="el" href="structContourList_1_1Node.html">Node</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aa5a6173b45499956934fea3f0f988937"><td class="mdescLeft">&#160;</td><td class="mdescRight">z1 &lt; z2  <a href="#aa5a6173b45499956934fea3f0f988937">More...</a><br /></td></tr>
 <tr class="separator:aa5a6173b45499956934fea3f0f988937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a034f1203c181859eff8925b7f3549f37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a034f1203c181859eff8925b7f3549f37">operator=</a> (const <a class="el" href="structContourList_1_1Node.html">Node</a> &amp;)=delete</td></tr>
 <tr class="separator:a034f1203c181859eff8925b7f3549f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb23cff73a9962b3afdb1de1d6457ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#abfb23cff73a9962b3afdb1de1d6457ea">Node</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&amp;)</td></tr>
+<tr class="separator:abfb23cff73a9962b3afdb1de1d6457ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe42cd30fcddd8ba4f7a486b61f5108c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#abe42cd30fcddd8ba4f7a486b61f5108c">operator=</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&amp;)</td></tr>
+<tr class="separator:abe42cd30fcddd8ba4f7a486b61f5108c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a3d76c3eedeb27c589d4863f618fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a14a3d76c3eedeb27c589d4863f618fb9">getPrev</a> () const </td></tr>
+<tr class="separator:a14a3d76c3eedeb27c589d4863f618fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7a77c38775ce6d5c5a55227b0d9094"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a1a7a77c38775ce6d5c5a55227b0d9094">getNext</a> () const </td></tr>
+<tr class="separator:a1a7a77c38775ce6d5c5a55227b0d9094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -123,8 +133,20 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acf3193319486884386610f80a4681014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5274d7d4c01c5205fb6dec2dd0065e11"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a5274d7d4c01c5205fb6dec2dd0065e11">z2</a></td></tr>
 <tr class="separator:a5274d7d4c01c5205fb6dec2dd0065e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac4e773feed1974871bd67d8d9575d3b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#ac4e773feed1974871bd67d8d9575d3b9">Node</a> (double _y, double _z1, double _z2)</td></tr>
+<tr class="memdesc:ac4e773feed1974871bd67d8d9575d3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">prev-&gt;z2 == z1, z2 == next-&gt;z1  <a href="#ac4e773feed1974871bd67d8d9575d3b9">More...</a><br /></td></tr>
+<tr class="separator:ac4e773feed1974871bd67d8d9575d3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82678de82c1659bb2f4192e5352498b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a82678de82c1659bb2f4192e5352498b6">~Node</a> ()=default</td></tr>
+<tr class="separator:a82678de82c1659bb2f4192e5352498b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9d36662d73e4775a6345e4693d4fda7b"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#a9d36662d73e4775a6345e4693d4fda7b">ContourList</a></td></tr>
+<tr class="separator:a9d36662d73e4775a6345e4693d4fda7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af08c22cbddfee4f0c0f6896c7284ed27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#af08c22cbddfee4f0c0f6896c7284ed27">prev</a></td></tr>
-<tr class="memdesc:af08c22cbddfee4f0c0f6896c7284ed27"><td class="mdescLeft">&#160;</td><td class="mdescRight">z1 &lt; z2  <a href="#af08c22cbddfee4f0c0f6896c7284ed27">More...</a><br /></td></tr>
 <tr class="separator:af08c22cbddfee4f0c0f6896c7284ed27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab93d87ce30e069a1154bce37acf1964d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContourList_1_1Node.html#ab93d87ce30e069a1154bce37acf1964d">next</a></td></tr>
 <tr class="separator:ab93d87ce30e069a1154bce37acf1964d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +154,48 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A node of a contour list. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa5a6173b45499956934fea3f0f988937"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ContourList::Node::Node </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>z1 &lt; z2 </p>
+
+</div>
+</div>
+<a class="anchor" id="abfb23cff73a9962b3afdb1de1d6457ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ContourList::Node::Node </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac4e773feed1974871bd67d8d9575d3b9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +229,7 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -174,7 +238,7 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa5a6173b45499956934fea3f0f988937"></a>
+<a class="anchor" id="a82678de82c1659bb2f4192e5352498b6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -182,16 +246,15 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ContourList::Node::Node </td>
+          <td class="memname">ContourList::Node::~Node </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structContourList_1_1Node.html">Node</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -199,6 +262,52 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1a7a77c38775ce6d5c5a55227b0d9094"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structContourList_1_1Node.html">Node</a>* ContourList::Node::getNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a14a3d76c3eedeb27c589d4863f618fb9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structContourList_1_1Node.html">Node</a>* ContourList::Node::getPrev </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a034f1203c181859eff8925b7f3549f37"></a>
 <div class="memitem">
 <div class="memproto">
@@ -223,15 +332,59 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abe42cd30fcddd8ba4f7a486b61f5108c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> &amp; ContourList::Node::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9d36662d73e4775a6345e4693d4fda7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend ContourList::Node::ContourList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab93d87ce30e069a1154bce37acf1964d"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structContourList_1_1Node.html">Node</a> * ContourList::Node::next</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -239,14 +392,20 @@ Public Attributes</h2></td></tr>
 <a class="anchor" id="af08c22cbddfee4f0c0f6896c7284ed27"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structContourList_1_1Node.html">Node</a>* ContourList::Node::prev</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>z1 &lt; z2 </p>
 
 </div>
 </div>
@@ -286,8 +445,9 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="ContourList_8h_source.html">ContourList.h</a></li>
+<li><a class="el" href="ContourList_8cpp.html">ContourList.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

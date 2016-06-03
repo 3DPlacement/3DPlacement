@@ -2,7 +2,7 @@
 \label{classContourList}\index{Contour\+List@{Contour\+List}}
 
 
-Defines a vertical contour doubly-\/linked list.  
+Defines a vertical contour doubly-\/linked list. used by \hyperlink{classTTree}{T\+Tree}. static class.  
 
 
 
@@ -11,7 +11,8 @@ Defines a vertical contour doubly-\/linked list.
 
 
 
-Collaboration diagram for Contour\+List\+:\nopagebreak
+Collaboration diagram for Contour\+List\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,13 +30,36 @@ struct \hyperlink{structContourList_1_1Node}{Node}
 static \hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{classContourList_a62250bf789d26d3392001287047e8d13}{replace} (\hyperlink{structContourList_1_1Node}{Node} $\ast$p, double \+\_\+z1, double \+\_\+z2)
 \begin{DoxyCompactList}\small\item\em Replace a segment of nodes with a node. \end{DoxyCompactList}\item 
 static void \hyperlink{classContourList_add57efb2cdaba0626be3138c91f5d43a}{delete\+Seg} (\hyperlink{structContourList_1_1Node}{Node} $\ast$l, \hyperlink{structContourList_1_1Node}{Node} $\ast$p, \hyperlink{structContourList_1_1Node}{Node} $\ast$r)
-\begin{DoxyCompactList}\small\item\em Delete a segement of nodes starting from p, next to l, right to r i.\+e. range (l, r) p must in the range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Delete a segement of nodes starting from p, next to l, right to r. i.\+e. range (l, r). \end{DoxyCompactList}\item 
+static \hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{classContourList_a4a9caa54290e0ca516375429a52cf768}{init} (double \+\_\+y)
+\begin{DoxyCompactList}\small\item\em Initialize a node with y=\+\_\+y, z1=-\/inf, z2=inf. \end{DoxyCompactList}\item 
+static void \hyperlink{classContourList_a8aecef9a5d7ebe21b57b0e2af079fec4}{connect} (\hyperlink{structContourList_1_1Node}{Node} $\ast$p, \hyperlink{structContourList_1_1Node}{Node} $\ast$q)
+\begin{DoxyCompactList}\small\item\em Connect two nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Defines a vertical contour doubly-\/linked list. 
+Defines a vertical contour doubly-\/linked list. used by \hyperlink{classTTree}{T\+Tree}. static class. 
 
 \subsection{Member Function Documentation}
+\hypertarget{classContourList_a8aecef9a5d7ebe21b57b0e2af079fec4}{}\index{Contour\+List@{Contour\+List}!connect@{connect}}
+\index{connect@{connect}!Contour\+List@{Contour\+List}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void Contour\+List\+::connect (
+\begin{DoxyParamCaption}
+\item[{{\bf Contour\+List\+::\+Node} $\ast$}]{p, }
+\item[{{\bf Contour\+List\+::\+Node} $\ast$}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classContourList_a8aecef9a5d7ebe21b57b0e2af079fec4}
+
+
+Connect two nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The front node. Can be N\+U\+L\+L. \\
+\hline
+{\em q} & The back node. Can be N\+U\+L\+L. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classContourList_add57efb2cdaba0626be3138c91f5d43a}{}\index{Contour\+List@{Contour\+List}!delete\+Seg@{delete\+Seg}}
 \index{delete\+Seg@{delete\+Seg}!Contour\+List@{Contour\+List}}
 \subsubsection[{delete\+Seg}]{\setlength{\rightskip}{0pt plus 5cm}void Contour\+List\+::delete\+Seg (
@@ -47,7 +71,25 @@ Defines a vertical contour doubly-\/linked list.
 )\hspace{0.3cm}{\ttfamily [static]}}\label{classContourList_add57efb2cdaba0626be3138c91f5d43a}
 
 
-Delete a segement of nodes starting from p, next to l, right to r i.\+e. range (l, r) p must in the range. 
+Delete a segement of nodes starting from p, next to l, right to r. i.\+e. range (l, r). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Must in the range. \\
+\hline
+{\em l,r} & Can be set to N\+U\+L\+L to delete all. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classContourList_a4a9caa54290e0ca516375429a52cf768}{}\index{Contour\+List@{Contour\+List}!init@{init}}
+\index{init@{init}!Contour\+List@{Contour\+List}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Contour\+List\+::\+Node} $\ast$ Contour\+List\+::init (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classContourList_a4a9caa54290e0ca516375429a52cf768}
+
+
+Initialize a node with y=\+\_\+y, z1=-\/inf, z2=inf. 
 
 \hypertarget{classContourList_a62250bf789d26d3392001287047e8d13}{}\index{Contour\+List@{Contour\+List}!replace@{replace}}
 \index{replace@{replace}!Contour\+List@{Contour\+List}}
@@ -63,7 +105,7 @@ Delete a segement of nodes starting from p, next to l, right to r i.\+e. range (
 Replace a segment of nodes with a node. 
 
 \begin{DoxyReturn}{Returns}
-\+: the new node 
+The new node 
 \end{DoxyReturn}
 
 

@@ -14,13 +14,12 @@ class TTree
 {
 public:
     TTree() : root(NULL) {}
-    ~TTree() { deleteRecur(root); }
 
     /// Randomly initialize a tree with given blocks
     void initialize(const std::vector<Block> &blocks);
 
     /// Randomly initialize a tree with given const blocks pointers
-    /// @1 : blocks. The given blocks. Shouldn't be const &
+    /// @param blocks The given blocks. Shouldn't be const &
     void initialize(std::vector<const Block*> blocks);
 
     /// Build a placement accroding to this tree
@@ -62,18 +61,16 @@ private:
 
         Node(const Node &) = delete;
         Node &operator=(const Node &) = delete;
-        Node(Node &&) = default;
-        Node &operator=(Node &&) = default;
+        Node(Node &&);
+        Node &operator=(Node &&);
     };
-
-    /// Used by TTree::~TTree()
-    void deleteRecur(Node *&p);
 
     /// Used by TTree::initialize
     void initializeRecur(Node *&p, size_t id, const std::vector<const Block*> &blocks);
 
     /// Used by TTree::getPlacement
-    void getPlacementRecur(const Node *p, ContourList::Node *q, double z, Placement &placement) const;
+    /// @return The node replaced q
+    ContourList::Node *getPlacementRecur(const Node *p, ContourList::Node *q, double z, Placement &placement) const;
 
     /// Randomly choose a node
     Node *randNode();
@@ -86,7 +83,7 @@ private:
 
     /// Detach a node from the tree
     /// This is a random procedure
-    /// @return : the node
+    /// @return The node
     Node *detach(Node *p);
 
     /// Randomly insert node `child` as child of node `parent`
@@ -94,7 +91,8 @@ private:
 
 #ifndef NDEBUG
     /// Used by Tree::verify
-    void verifyRecur(const Node* const& p, std::set<const Block*> &blocks) const;
+    /// @param p Should be * const &, instead of const * const &. Type conversion will change the address
+    void verifyRecur(Node* const& p, std::set<const Block*> &blocks) const;
 #endif // NDEBUG
 
     Node *root;
@@ -105,7 +103,7 @@ private:
 
 inline TTree::Node *TTree::randNode()
 {
-    return &pool[Random::getInstance().getRandomInt(0, pool.size())];
+    return &pool[Random::getInstance().getRandomInt(0, pool.size() - 1)];
 }
 
 inline void TTree::randPair(Node *&p, Node *&q)
@@ -116,9 +114,11 @@ inline void TTree::randPair(Node *&p, Node *&q)
 
 inline void TTree::randomMove()
 {
-    Node *p(NULL), *q(NULL);
-    randPair(p, q);
-    insert(p, detach(q));
+    // Do not use randPair here
+    Node *p(NULL), *q(randNode());
+    q = detach(q);
+    do p = randNode(); while (p == q);
+    insert(p, q);
 }
 
 inline void TTree::randomSwap()

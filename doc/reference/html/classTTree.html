@@ -99,7 +99,7 @@ Collaboration diagram for TTree:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTTree__coll__graph.png" border="0" usemap="#TTree_coll__map" alt="Collaboration graph"/></div>
 <map name="TTree_coll__map" id="TTree_coll__map">
-<area shape="rect" id="node2" href="structTTree_1_1Node.html" title="Internal class. A node of T Tree. " alt="" coords="33,388,131,495"/><area shape="rect" id="node3" href="structRotatableBlock.html" title="{RotatableBlock\n|+ rotation\l|+ RotatableBlock()\l+ getL()\l+ getW()\l+ getH()\l+ getRandRotate()\l}" alt="" coords="17,189,147,325"/><area shape="rect" id="node4" href="structBlock.html" title="Defines a block out of the coordinates. This is determined by input and will not modified in the algo..." alt="" coords="45,5,119,127"/></map>
+<area shape="rect" id="node2" href="structTTree_1_1Node.html" title="Internal class. A node of T Tree. " alt="" coords="33,388,131,524"/><area shape="rect" id="node3" href="structRotatableBlock.html" title="{RotatableBlock\n|+ rotation\l|+ RotatableBlock()\l+ getL()\l+ getW()\l+ getH()\l+ getRandRotate()\l}" alt="" coords="17,189,147,325"/><area shape="rect" id="node4" href="structBlock.html" title="Defines a block out of the coordinates. This is determined by input and will not modified in the algo..." alt="" coords="45,5,119,127"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -112,13 +112,11 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a86fa5aaf9e0e661ab3711fc70c99070e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a86fa5aaf9e0e661ab3711fc70c99070e">TTree</a> ()</td></tr>
 <tr class="separator:a86fa5aaf9e0e661ab3711fc70c99070e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a392d80512f4336cdc8f60eee4377e668"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a392d80512f4336cdc8f60eee4377e668">~TTree</a> ()</td></tr>
-<tr class="separator:a392d80512f4336cdc8f60eee4377e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7be152bf003a3b7a41a0d2f2b8a60dcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a7be152bf003a3b7a41a0d2f2b8a60dcb">initialize</a> (const std::vector&lt; <a class="el" href="structBlock.html">Block</a> &gt; &amp;blocks)</td></tr>
 <tr class="memdesc:a7be152bf003a3b7a41a0d2f2b8a60dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly initialize a tree with given blocks.  <a href="#a7be152bf003a3b7a41a0d2f2b8a60dcb">More...</a><br /></td></tr>
 <tr class="separator:a7be152bf003a3b7a41a0d2f2b8a60dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39407b0d5bb0419d5930a264f909d240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a39407b0d5bb0419d5930a264f909d240">initialize</a> (std::vector&lt; const <a class="el" href="structBlock.html">Block</a> * &gt; blocks)</td></tr>
-<tr class="memdesc:a39407b0d5bb0419d5930a264f909d240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly initialize a tree with given const blocks pointers @1 : blocks. The given blocks. Shouldn't be const &amp;.  <a href="#a39407b0d5bb0419d5930a264f909d240">More...</a><br /></td></tr>
+<tr class="memdesc:a39407b0d5bb0419d5930a264f909d240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly initialize a tree with given const blocks pointers.  <a href="#a39407b0d5bb0419d5930a264f909d240">More...</a><br /></td></tr>
 <tr class="separator:a39407b0d5bb0419d5930a264f909d240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e34e70567be7961d4a5683010746aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlacement.html">Placement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a7e34e70567be7961d4a5683010746aae">getPlacement</a> () const </td></tr>
 <tr class="memdesc:a7e34e70567be7961d4a5683010746aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a placement accroding to this tree.  <a href="#a7e34e70567be7961d4a5683010746aae">More...</a><br /></td></tr>
@@ -136,21 +134,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad7fb8543e084eea4a24571f3cb979555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c4da2361311ac5903822a2151865ae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree.html">TTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a3c4da2361311ac5903822a2151865ae6">operator=</a> (const <a class="el" href="classTTree.html">TTree</a> &amp;)=delete</td></tr>
 <tr class="separator:a3c4da2361311ac5903822a2151865ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa1c1f035255298fd22be8810d5d672"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#acfa1c1f035255298fd22be8810d5d672">TTree</a> (<a class="el" href="classTTree.html">TTree</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:acfa1c1f035255298fd22be8810d5d672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8751a54d1c80d2f822d84a98e5c96293"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree.html">TTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a8751a54d1c80d2f822d84a98e5c96293">operator=</a> (<a class="el" href="classTTree.html">TTree</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a8751a54d1c80d2f822d84a98e5c96293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a561ca642fa6104a2275c30974b57e221"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a561ca642fa6104a2275c30974b57e221">verify</a> () const </td></tr>
 <tr class="memdesc:a561ca642fa6104a2275c30974b57e221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the some correctness of the tree Uses assert.  <a href="#a561ca642fa6104a2275c30974b57e221">More...</a><br /></td></tr>
 <tr class="separator:a561ca642fa6104a2275c30974b57e221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ae84ee6af5647439489b8d06c05cb2f8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#ae84ee6af5647439489b8d06c05cb2f8e">deleteRecur</a> (<a class="el" href="structTTree_1_1Node.html">Node</a> *&amp;p)</td></tr>
-<tr class="memdesc:ae84ee6af5647439489b8d06c05cb2f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by <a class="el" href="classTTree.html#a392d80512f4336cdc8f60eee4377e668">TTree::~TTree()</a>  <a href="#ae84ee6af5647439489b8d06c05cb2f8e">More...</a><br /></td></tr>
-<tr class="separator:ae84ee6af5647439489b8d06c05cb2f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4a9d2b247a7f9c33d1834fd23de7cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#aa4a9d2b247a7f9c33d1834fd23de7cca">initializeRecur</a> (<a class="el" href="structTTree_1_1Node.html">Node</a> *&amp;p, size_t id, const std::vector&lt; const <a class="el" href="structBlock.html">Block</a> * &gt; &amp;blocks)</td></tr>
 <tr class="memdesc:aa4a9d2b247a7f9c33d1834fd23de7cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by <a class="el" href="classTTree.html#a7be152bf003a3b7a41a0d2f2b8a60dcb" title="Randomly initialize a tree with given blocks. ">TTree::initialize</a>.  <a href="#aa4a9d2b247a7f9c33d1834fd23de7cca">More...</a><br /></td></tr>
 <tr class="separator:aa4a9d2b247a7f9c33d1834fd23de7cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f3075fa4f2bae22a681a1c2889692c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a15f3075fa4f2bae22a681a1c2889692c">getPlacementRecur</a> (const <a class="el" href="structTTree_1_1Node.html">Node</a> *p, <a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> *q, double z, <a class="el" href="classPlacement.html">Placement</a> &amp;placement) const </td></tr>
-<tr class="memdesc:a15f3075fa4f2bae22a681a1c2889692c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by <a class="el" href="classTTree.html#a7e34e70567be7961d4a5683010746aae" title="Build a placement accroding to this tree. ">TTree::getPlacement</a>.  <a href="#a15f3075fa4f2bae22a681a1c2889692c">More...</a><br /></td></tr>
-<tr class="separator:a15f3075fa4f2bae22a681a1c2889692c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4852b91528cb10c01d05a2ff8f20fe4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a4852b91528cb10c01d05a2ff8f20fe4b">getPlacementRecur</a> (const <a class="el" href="structTTree_1_1Node.html">Node</a> *p, <a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> *q, double z, <a class="el" href="classPlacement.html">Placement</a> &amp;placement) const </td></tr>
+<tr class="memdesc:a4852b91528cb10c01d05a2ff8f20fe4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by <a class="el" href="classTTree.html#a7e34e70567be7961d4a5683010746aae" title="Build a placement accroding to this tree. ">TTree::getPlacement</a>.  <a href="#a4852b91528cb10c01d05a2ff8f20fe4b">More...</a><br /></td></tr>
+<tr class="separator:a4852b91528cb10c01d05a2ff8f20fe4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd9ed57c09bb59a5fcf618b8e215d584"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTTree_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#acd9ed57c09bb59a5fcf618b8e215d584">randNode</a> ()</td></tr>
 <tr class="memdesc:acd9ed57c09bb59a5fcf618b8e215d584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly choose a node.  <a href="#acd9ed57c09bb59a5fcf618b8e215d584">More...</a><br /></td></tr>
 <tr class="separator:acd9ed57c09bb59a5fcf618b8e215d584"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,9 +165,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a0bc18fd4039dc1ae0a53d2b68741a92b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#a0bc18fd4039dc1ae0a53d2b68741a92b">insert</a> (<a class="el" href="structTTree_1_1Node.html">Node</a> *parent, <a class="el" href="structTTree_1_1Node.html">Node</a> *child)</td></tr>
 <tr class="memdesc:a0bc18fd4039dc1ae0a53d2b68741a92b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly insert node <code>child</code> as child of node <code>parent</code>  <a href="#a0bc18fd4039dc1ae0a53d2b68741a92b">More...</a><br /></td></tr>
 <tr class="separator:a0bc18fd4039dc1ae0a53d2b68741a92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5eff05ab8d8365737b1eef83ac3ee87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#ab5eff05ab8d8365737b1eef83ac3ee87">verifyRecur</a> (const <a class="el" href="structTTree_1_1Node.html">Node</a> *const &amp;p, std::set&lt; const <a class="el" href="structBlock.html">Block</a> * &gt; &amp;blocks) const </td></tr>
-<tr class="memdesc:ab5eff05ab8d8365737b1eef83ac3ee87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by Tree::verify.  <a href="#ab5eff05ab8d8365737b1eef83ac3ee87">More...</a><br /></td></tr>
-<tr class="separator:ab5eff05ab8d8365737b1eef83ac3ee87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50938f36651a0cb2077ae84de2576a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree.html#ab50938f36651a0cb2077ae84de2576a7">verifyRecur</a> (<a class="el" href="structTTree_1_1Node.html">Node</a> *const &amp;p, std::set&lt; const <a class="el" href="structBlock.html">Block</a> * &gt; &amp;blocks) const </td></tr>
+<tr class="memdesc:ab50938f36651a0cb2077ae84de2576a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by Tree::verify.  <a href="#ab50938f36651a0cb2077ae84de2576a7">More...</a><br /></td></tr>
+<tr class="separator:ab50938f36651a0cb2077ae84de2576a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -188,29 +187,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">TTree::TTree </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a392d80512f4336cdc8f60eee4377e668"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TTree::~TTree </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -249,8 +225,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae84ee6af5647439489b8d06c05cb2f8e"></a>
+<a class="anchor" id="acfa1c1f035255298fd22be8810d5d672"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -258,24 +233,23 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TTree::deleteRecur </td>
+          <td class="memname">TTree::TTree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structTTree_1_1Node.html">Node</a> *&amp;&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classTTree.html">TTree</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Used by <a class="el" href="classTTree.html#a392d80512f4336cdc8f60eee4377e668">TTree::~TTree()</a> </p>
-
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ab9b74f48afd54c16fd1dc3b598019f7f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -299,7 +273,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Detach a node from the tree This is a random procedure. </p>
-<dl class="section return"><dt>Returns</dt><dd>: the node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The node </dd></dl>
 
 </div>
 </div>
@@ -320,7 +294,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a15f3075fa4f2bae22a681a1c2889692c"></a>
+<a class="anchor" id="a4852b91528cb10c01d05a2ff8f20fe4b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -328,7 +302,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TTree::getPlacementRecur </td>
+          <td class="memname"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> * TTree::getPlacementRecur </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTTree_1_1Node.html">Node</a> *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -365,6 +339,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Used by <a class="el" href="classTTree.html#a7e34e70567be7961d4a5683010746aae" title="Build a placement accroding to this tree. ">TTree::getPlacement</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The node replaced q </dd></dl>
 
 </div>
 </div>
@@ -400,7 +375,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Randomly initialize a tree with given const blocks pointers @1 : blocks. The given blocks. Shouldn't be const &amp;. </p>
+<p>Randomly initialize a tree with given const blocks pointers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blocks</td><td>The given blocks. Shouldn't be const &amp; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -500,6 +481,30 @@ Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8751a54d1c80d2f822d84a98e5c96293"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTTree.html">TTree</a>&amp; TTree::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTTree.html">TTree</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -695,7 +700,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab5eff05ab8d8365737b1eef83ac3ee87"></a>
+<a class="anchor" id="ab50938f36651a0cb2077ae84de2576a7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -705,7 +710,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void TTree::verifyRecur </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structTTree_1_1Node.html">Node</a> *const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structTTree_1_1Node.html">Node</a> *const &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -728,6 +733,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Used by Tree::verify. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Should be * const &amp;, instead of const * const &amp;. Type conversion will change the address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

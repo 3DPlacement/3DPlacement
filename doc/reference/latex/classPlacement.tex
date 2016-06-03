@@ -11,7 +11,8 @@ A compact placement of blocks.
 
 
 
-Collaboration diagram for Placement\+:\nopagebreak
+Collaboration diagram for Placement\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,6 +33,8 @@ const std\+::vector$<$ \hyperlink{structPlacement_1_1BlockWithPos}{Block\+With\+
 \begin{DoxyCompactList}\small\item\em Get all blocks\textquotesingle{} positions. \end{DoxyCompactList}\item 
 double \hyperlink{classPlacement_a686b1f2aa26ae12285a5759d1b6e5f67}{get\+Volume} () const 
 \begin{DoxyCompactList}\small\item\em Get the volume of the bounding box. \end{DoxyCompactList}\item 
+double \hyperlink{classPlacement_a479626954e228086398665507bed9beb}{get\+Net\+Volume} () const 
+\begin{DoxyCompactList}\small\item\em Get total volume of every blocks. \end{DoxyCompactList}\item 
 void \hyperlink{classPlacement_a21dc44cf496d771e5c2ac17a24ac1703}{add\+Block} (const \hyperlink{structRotatableBlock}{Rotatable\+Block} \&\+\_\+block, double \+\_\+y, double \+\_\+z)
 \begin{DoxyCompactList}\small\item\em Add one block into this placement. \end{DoxyCompactList}\item 
 void \hyperlink{classPlacement_a7e54624dff8703581efc6be7d1af991e}{verify} () const 
@@ -65,7 +68,9 @@ double \hyperlink{classPlacement_ae7b89409ab130ba3d7c268faf7175b40}{y2}
 double \hyperlink{classPlacement_a3e9d90f2d85b6641d2fd7d74d2600394}{z1}
 \item 
 double \hyperlink{classPlacement_aed710205286315a2a14f8cc2ceacd267}{z2}
-\end{DoxyCompactItemize}
+\item 
+double \hyperlink{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}{net\+Volume}
+\begin{DoxyCompactList}\small\item\em Total volume of every blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -94,6 +99,17 @@ A compact placement of blocks.
 
 
 Add one block into this placement. 
+
+\hypertarget{classPlacement_a479626954e228086398665507bed9beb}{}\index{Placement@{Placement}!get\+Net\+Volume@{get\+Net\+Volume}}
+\index{get\+Net\+Volume@{get\+Net\+Volume}!Placement@{Placement}}
+\subsubsection[{get\+Net\+Volume}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::get\+Net\+Volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPlacement_a479626954e228086398665507bed9beb}
+
+
+Get total volume of every blocks. 
 
 \hypertarget{classPlacement_a8d2aff015fbf652bbccae2db6c7dd7d9}{}\index{Placement@{Placement}!get\+Positions@{get\+Positions}}
 \index{get\+Positions@{get\+Positions}!Placement@{Placement}}
@@ -185,6 +201,13 @@ Verify some correctness.
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}{}\index{Placement@{Placement}!net\+Volume@{net\+Volume}}
+\index{net\+Volume@{net\+Volume}!Placement@{Placement}}
+\subsubsection[{net\+Volume}]{\setlength{\rightskip}{0pt plus 5cm}double Placement\+::net\+Volume\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_afe51f89ddfdb2d27b68449d96f50e24d}
+
+
+Total volume of every blocks. 
+
 \hypertarget{classPlacement_a5c4c9527336f2c2c18e2c6234aad8878}{}\index{Placement@{Placement}!positions@{positions}}
 \index{positions@{positions}!Placement@{Placement}}
 \subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Block\+With\+Pos}$>$ Placement\+::positions\hspace{0.3cm}{\ttfamily [private]}}\label{classPlacement_a5c4c9527336f2c2c18e2c6234aad8878}

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Defines a vertical contour doubly-linked list.  
+<p>Defines a vertical contour doubly-linked list. used by <a class="el" href="classTTree.html">TTree</a>. static class.  
  <a href="classContourList.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ContourList_8h_source.html">ContourList.h</a>&gt;</code></p>
@@ -99,6 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for ContourList:</div>
 <div class="dyncontent">
 <div class="center"><img src="classContourList__coll__graph.png" border="0" usemap="#ContourList_coll__map" alt="Collaboration graph"/></div>
+<map name="ContourList_coll__map" id="ContourList_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -113,12 +115,61 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a62250bf789d26d3392001287047e8d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a segment of nodes with a node.  <a href="#a62250bf789d26d3392001287047e8d13">More...</a><br /></td></tr>
 <tr class="separator:a62250bf789d26d3392001287047e8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add57efb2cdaba0626be3138c91f5d43a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#add57efb2cdaba0626be3138c91f5d43a">deleteSeg</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> *l, <a class="el" href="structContourList_1_1Node.html">Node</a> *p, <a class="el" href="structContourList_1_1Node.html">Node</a> *r)</td></tr>
-<tr class="memdesc:add57efb2cdaba0626be3138c91f5d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a segement of nodes starting from p, next to l, right to r i.e. range (l, r) p must in the range.  <a href="#add57efb2cdaba0626be3138c91f5d43a">More...</a><br /></td></tr>
+<tr class="memdesc:add57efb2cdaba0626be3138c91f5d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a segement of nodes starting from p, next to l, right to r. i.e. range (l, r).  <a href="#add57efb2cdaba0626be3138c91f5d43a">More...</a><br /></td></tr>
 <tr class="separator:add57efb2cdaba0626be3138c91f5d43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9caa54290e0ca516375429a52cf768"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structContourList_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#a4a9caa54290e0ca516375429a52cf768">init</a> (double _y)</td></tr>
+<tr class="memdesc:a4a9caa54290e0ca516375429a52cf768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a node with y=_y, z1=-inf, z2=inf.  <a href="#a4a9caa54290e0ca516375429a52cf768">More...</a><br /></td></tr>
+<tr class="separator:a4a9caa54290e0ca516375429a52cf768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aecef9a5d7ebe21b57b0e2af079fec4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classContourList.html#a8aecef9a5d7ebe21b57b0e2af079fec4">connect</a> (<a class="el" href="structContourList_1_1Node.html">Node</a> *p, <a class="el" href="structContourList_1_1Node.html">Node</a> *q)</td></tr>
+<tr class="memdesc:a8aecef9a5d7ebe21b57b0e2af079fec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect two nodes.  <a href="#a8aecef9a5d7ebe21b57b0e2af079fec4">More...</a><br /></td></tr>
+<tr class="separator:a8aecef9a5d7ebe21b57b0e2af079fec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines a vertical contour doubly-linked list. </p>
+<div class="textblock"><p>Defines a vertical contour doubly-linked list. used by <a class="el" href="classTTree.html">TTree</a>. static class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8aecef9a5d7ebe21b57b0e2af079fec4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ContourList::connect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> *&#160;</td>
+          <td class="paramname"><em>q</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connect two nodes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The front node. Can be NULL. </td></tr>
+    <tr><td class="paramname">q</td><td>The back node. Can be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="add57efb2cdaba0626be3138c91f5d43a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +208,40 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Delete a segement of nodes starting from p, next to l, right to r i.e. range (l, r) p must in the range. </p>
+<p>Delete a segement of nodes starting from p, next to l, right to r. i.e. range (l, r). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Must in the range. </td></tr>
+    <tr><td class="paramname">l,r</td><td>Can be set to NULL to delete all. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a9caa54290e0ca516375429a52cf768"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structContourList_1_1Node.html">ContourList::Node</a> * ContourList::init </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>_y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a node with y=_y, z1=-inf, z2=inf. </p>
 
 </div>
 </div>
@@ -200,7 +284,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Replace a segment of nodes with a node. </p>
-<dl class="section return"><dt>Returns</dt><dd>: the new node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The new node </dd></dl>
 
 </div>
 </div>

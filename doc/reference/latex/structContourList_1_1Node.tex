@@ -11,21 +11,28 @@ A node of a contour list.
 
 
 
-Collaboration diagram for Contour\+List\+:\+:Node\+:\nopagebreak
+Collaboration diagram for Contour\+List\+:\+:Node\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{structContourList_1_1Node__coll__graph}
+\includegraphics[width=219pt]{structContourList_1_1Node__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}{Node} (double \+\_\+y, double \+\_\+z1, double \+\_\+z2)
-\begin{DoxyCompactList}\small\item\em prev-\/$>$z2 == z1, z2 == next-\/$>$z1 \end{DoxyCompactList}\item 
 \hyperlink{structContourList_1_1Node_aa5a6173b45499956934fea3f0f988937}{Node} (const \hyperlink{structContourList_1_1Node}{Node} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em z1 $<$ z2 \end{DoxyCompactList}\item 
 \hyperlink{structContourList_1_1Node}{Node} \& \hyperlink{structContourList_1_1Node_a034f1203c181859eff8925b7f3549f37}{operator=} (const \hyperlink{structContourList_1_1Node}{Node} \&)=delete
+\item 
+\hyperlink{structContourList_1_1Node_abfb23cff73a9962b3afdb1de1d6457ea}{Node} (\hyperlink{structContourList_1_1Node}{Node} \&\&)
+\item 
+\hyperlink{structContourList_1_1Node}{Node} \& \hyperlink{structContourList_1_1Node_abe42cd30fcddd8ba4f7a486b61f5108c}{operator=} (\hyperlink{structContourList_1_1Node}{Node} \&\&)
+\item 
+\hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{structContourList_1_1Node_a14a3d76c3eedeb27c589d4863f618fb9}{get\+Prev} () const 
+\item 
+\hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{structContourList_1_1Node_a1a7a77c38775ce6d5c5a55227b0d9094}{get\+Next} () const 
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -35,9 +42,21 @@ double \hyperlink{structContourList_1_1Node_ac371d90797c06c6b6a6de40e21d17110}{y
 double \hyperlink{structContourList_1_1Node_acf3193319486884386610f80a4681014}{z1}
 \item 
 double \hyperlink{structContourList_1_1Node_a5274d7d4c01c5205fb6dec2dd0065e11}{z2}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}{Node} (double \+\_\+y, double \+\_\+z1, double \+\_\+z2)
+\begin{DoxyCompactList}\small\item\em prev-\/$>$z2 == z1, z2 == next-\/$>$z1 \end{DoxyCompactList}\item 
+\hyperlink{structContourList_1_1Node_a82678de82c1659bb2f4192e5352498b6}{$\sim$\+Node} ()=default
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{structContourList_1_1Node_a9d36662d73e4775a6345e4693d4fda7b}{Contour\+List}
 \item 
 \hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{structContourList_1_1Node_af08c22cbddfee4f0c0f6896c7284ed27}{prev}
-\begin{DoxyCompactList}\small\item\em z1 $<$ z2 \end{DoxyCompactList}\item 
+\item 
 \hyperlink{structContourList_1_1Node}{Node} $\ast$ \hyperlink{structContourList_1_1Node_ab93d87ce30e069a1154bce37acf1964d}{next}
 \end{DoxyCompactItemize}
 
@@ -46,19 +65,6 @@ double \hyperlink{structContourList_1_1Node_a5274d7d4c01c5205fb6dec2dd0065e11}{z
 A node of a contour list. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!Node@{Node}}
-\index{Node@{Node}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
-\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Contour\+List\+::\+Node\+::\+Node (
-\begin{DoxyParamCaption}
-\item[{double}]{\+\_\+y, }
-\item[{double}]{\+\_\+z1, }
-\item[{double}]{\+\_\+z2}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\label{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}
-
-
-prev-\/$>$z2 == z1, z2 == next-\/$>$z1 
-
 \hypertarget{structContourList_1_1Node_aa5a6173b45499956934fea3f0f988937}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!Node@{Node}}
 \index{Node@{Node}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
 \subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Contour\+List\+::\+Node\+::\+Node (
@@ -68,7 +74,52 @@ prev-\/$>$z2 == z1, z2 == next-\/$>$z1
 )\hspace{0.3cm}{\ttfamily [delete]}}\label{structContourList_1_1Node_aa5a6173b45499956934fea3f0f988937}
 
 
+z1 $<$ z2 
+
+\hypertarget{structContourList_1_1Node_abfb23cff73a9962b3afdb1de1d6457ea}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Contour\+List\+::\+Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Contour\+List\+::\+Node} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\label{structContourList_1_1Node_abfb23cff73a9962b3afdb1de1d6457ea}
+\hypertarget{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}Contour\+List\+::\+Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+y, }
+\item[{double}]{\+\_\+z1, }
+\item[{double}]{\+\_\+z2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{structContourList_1_1Node_ac4e773feed1974871bd67d8d9575d3b9}
+
+
+prev-\/$>$z2 == z1, z2 == next-\/$>$z1 
+
+\hypertarget{structContourList_1_1Node_a82678de82c1659bb2f4192e5352498b6}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{$\sim$\+Node}]{\setlength{\rightskip}{0pt plus 5cm}Contour\+List\+::\+Node\+::$\sim$\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}\label{structContourList_1_1Node_a82678de82c1659bb2f4192e5352498b6}
+
+
 \subsection{Member Function Documentation}
+\hypertarget{structContourList_1_1Node_a1a7a77c38775ce6d5c5a55227b0d9094}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!get\+Next@{get\+Next}}
+\index{get\+Next@{get\+Next}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{get\+Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Contour\+List\+::\+Node\+::get\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structContourList_1_1Node_a1a7a77c38775ce6d5c5a55227b0d9094}
+\hypertarget{structContourList_1_1Node_a14a3d76c3eedeb27c589d4863f618fb9}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!get\+Prev@{get\+Prev}}
+\index{get\+Prev@{get\+Prev}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{get\+Prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Contour\+List\+::\+Node\+::get\+Prev (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structContourList_1_1Node_a14a3d76c3eedeb27c589d4863f618fb9}
 \hypertarget{structContourList_1_1Node_a034f1203c181859eff8925b7f3549f37}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!operator=@{operator=}}
 \index{operator=@{operator=}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}\& Contour\+List\+::\+Node\+::operator= (
@@ -76,19 +127,25 @@ prev-\/$>$z2 == z1, z2 == next-\/$>$z1
 \item[{const {\bf Node} \&}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [delete]}}\label{structContourList_1_1Node_a034f1203c181859eff8925b7f3549f37}
+\hypertarget{structContourList_1_1Node_abe42cd30fcddd8ba4f7a486b61f5108c}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!operator=@{operator=}}
+\index{operator=@{operator=}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Contour\+List\+::\+Node} \& Contour\+List\+::\+Node\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Contour\+List\+::\+Node} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\label{structContourList_1_1Node_abe42cd30fcddd8ba4f7a486b61f5108c}
 
 
 \subsection{Member Data Documentation}
+\hypertarget{structContourList_1_1Node_a9d36662d73e4775a6345e4693d4fda7b}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!Contour\+List@{Contour\+List}}
+\index{Contour\+List@{Contour\+List}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
+\subsubsection[{Contour\+List}]{\setlength{\rightskip}{0pt plus 5cm}friend Contour\+List\+::\+Node\+::\+Contour\+List\hspace{0.3cm}{\ttfamily [private]}}\label{structContourList_1_1Node_a9d36662d73e4775a6345e4693d4fda7b}
 \hypertarget{structContourList_1_1Node_ab93d87ce30e069a1154bce37acf1964d}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!next@{next}}
 \index{next@{next}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
-\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Contour\+List\+::\+Node\+::next}\label{structContourList_1_1Node_ab93d87ce30e069a1154bce37acf1964d}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ Contour\+List\+::\+Node\+::next\hspace{0.3cm}{\ttfamily [private]}}\label{structContourList_1_1Node_ab93d87ce30e069a1154bce37acf1964d}
 \hypertarget{structContourList_1_1Node_af08c22cbddfee4f0c0f6896c7284ed27}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!prev@{prev}}
 \index{prev@{prev}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
-\subsubsection[{prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Contour\+List\+::\+Node\+::prev}\label{structContourList_1_1Node_af08c22cbddfee4f0c0f6896c7284ed27}
-
-
-z1 $<$ z2 
-
+\subsubsection[{prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ Contour\+List\+::\+Node\+::prev\hspace{0.3cm}{\ttfamily [private]}}\label{structContourList_1_1Node_af08c22cbddfee4f0c0f6896c7284ed27}
 \hypertarget{structContourList_1_1Node_ac371d90797c06c6b6a6de40e21d17110}{}\index{Contour\+List\+::\+Node@{Contour\+List\+::\+Node}!y@{y}}
 \index{y@{y}!Contour\+List\+::\+Node@{Contour\+List\+::\+Node}}
 \subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}double Contour\+List\+::\+Node\+::y}\label{structContourList_1_1Node_ac371d90797c06c6b6a6de40e21d17110}
@@ -100,6 +157,7 @@ z1 $<$ z2
 \subsubsection[{z2}]{\setlength{\rightskip}{0pt plus 5cm}double Contour\+List\+::\+Node\+::z2}\label{structContourList_1_1Node_a5274d7d4c01c5205fb6dec2dd0065e11}
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{ContourList_8h}{Contour\+List.\+h}\end{DoxyCompactItemize}
+\hyperlink{ContourList_8h}{Contour\+List.\+h}\item 
+\hyperlink{ContourList_8cpp}{Contour\+List.\+cpp}\end{DoxyCompactItemize}

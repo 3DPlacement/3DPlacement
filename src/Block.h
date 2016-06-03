@@ -60,7 +60,7 @@ inline double RotatableBlock::getH() const
 
 inline RotatableBlock::ROTATE_NAME RotatableBlock::getRandRotate()
 {
-    switch (Random::getInstance().getRandomInt(0, 6))
+    switch (Random::getInstance().getRandomInt(0, 5))
     {
     case 0: return XYZ;
     case 1: return XZY;

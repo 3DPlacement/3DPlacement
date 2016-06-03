@@ -6,7 +6,8 @@
 
 
 
-Collaboration diagram for T\+Tree\+:\nopagebreak
+Collaboration diagram for T\+Tree\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,12 +24,10 @@ struct \hyperlink{structTTree_1_1Node}{Node}
 \item 
 \hyperlink{classTTree_a86fa5aaf9e0e661ab3711fc70c99070e}{T\+Tree} ()
 \item 
-\hyperlink{classTTree_a392d80512f4336cdc8f60eee4377e668}{$\sim$\+T\+Tree} ()
-\item 
 void \hyperlink{classTTree_a7be152bf003a3b7a41a0d2f2b8a60dcb}{initialize} (const std\+::vector$<$ \hyperlink{structBlock}{Block} $>$ \&blocks)
 \begin{DoxyCompactList}\small\item\em Randomly initialize a tree with given blocks. \end{DoxyCompactList}\item 
 void \hyperlink{classTTree_a39407b0d5bb0419d5930a264f909d240}{initialize} (std\+::vector$<$ const \hyperlink{structBlock}{Block} $\ast$ $>$ blocks)
-\begin{DoxyCompactList}\small\item\em Randomly initialize a tree with given const blocks pointers @1 \+: blocks. The given blocks. Shouldn\textquotesingle{}t be const \&. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Randomly initialize a tree with given const blocks pointers. \end{DoxyCompactList}\item 
 \hyperlink{classPlacement}{Placement} \hyperlink{classTTree_a7e34e70567be7961d4a5683010746aae}{get\+Placement} () const 
 \begin{DoxyCompactList}\small\item\em Build a placement accroding to this tree. \end{DoxyCompactList}\item 
 void \hyperlink{classTTree_a0b4e068faf77b43c5cb00a4e61a1c130}{random\+Move} ()
@@ -41,16 +40,18 @@ void \hyperlink{classTTree_a72310af81f796797a623145656028bfc}{random\+Rotate} ()
 \item 
 \hyperlink{classTTree}{T\+Tree} \& \hyperlink{classTTree_a3c4da2361311ac5903822a2151865ae6}{operator=} (const \hyperlink{classTTree}{T\+Tree} \&)=delete
 \item 
+\hyperlink{classTTree_acfa1c1f035255298fd22be8810d5d672}{T\+Tree} (\hyperlink{classTTree}{T\+Tree} \&\&)=default
+\item 
+\hyperlink{classTTree}{T\+Tree} \& \hyperlink{classTTree_a8751a54d1c80d2f822d84a98e5c96293}{operator=} (\hyperlink{classTTree}{T\+Tree} \&\&)=default
+\item 
 void \hyperlink{classTTree_a561ca642fa6104a2275c30974b57e221}{verify} () const 
 \begin{DoxyCompactList}\small\item\em Verify the some correctness of the tree Uses assert. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classTTree_ae84ee6af5647439489b8d06c05cb2f8e}{delete\+Recur} (\hyperlink{structTTree_1_1Node}{Node} $\ast$\&p)
-\begin{DoxyCompactList}\small\item\em Used by \hyperlink{classTTree_a392d80512f4336cdc8f60eee4377e668}{T\+Tree\+::$\sim$\+T\+Tree()} \end{DoxyCompactList}\item 
 void \hyperlink{classTTree_aa4a9d2b247a7f9c33d1834fd23de7cca}{initialize\+Recur} (\hyperlink{structTTree_1_1Node}{Node} $\ast$\&p, size\+\_\+t id, const std\+::vector$<$ const \hyperlink{structBlock}{Block} $\ast$ $>$ \&blocks)
 \begin{DoxyCompactList}\small\item\em Used by \hyperlink{classTTree_a7be152bf003a3b7a41a0d2f2b8a60dcb}{T\+Tree\+::initialize}. \end{DoxyCompactList}\item 
-void \hyperlink{classTTree_a15f3075fa4f2bae22a681a1c2889692c}{get\+Placement\+Recur} (const \hyperlink{structTTree_1_1Node}{Node} $\ast$p, \hyperlink{structContourList_1_1Node}{Contour\+List\+::\+Node} $\ast$q, double z, \hyperlink{classPlacement}{Placement} \&placement) const 
+\hyperlink{structContourList_1_1Node}{Contour\+List\+::\+Node} $\ast$ \hyperlink{classTTree_a4852b91528cb10c01d05a2ff8f20fe4b}{get\+Placement\+Recur} (const \hyperlink{structTTree_1_1Node}{Node} $\ast$p, \hyperlink{structContourList_1_1Node}{Contour\+List\+::\+Node} $\ast$q, double z, \hyperlink{classPlacement}{Placement} \&placement) const 
 \begin{DoxyCompactList}\small\item\em Used by \hyperlink{classTTree_a7e34e70567be7961d4a5683010746aae}{T\+Tree\+::get\+Placement}. \end{DoxyCompactList}\item 
 \hyperlink{structTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_acd9ed57c09bb59a5fcf618b8e215d584}{rand\+Node} ()
 \begin{DoxyCompactList}\small\item\em Randomly choose a node. \end{DoxyCompactList}\item 
@@ -62,7 +63,7 @@ void \hyperlink{classTTree_adbb05d027840467cdce8b9489bc49225}{swap\+Node} (\hype
 \begin{DoxyCompactList}\small\item\em Detach a node from the tree This is a random procedure. \end{DoxyCompactList}\item 
 void \hyperlink{classTTree_a0bc18fd4039dc1ae0a53d2b68741a92b}{insert} (\hyperlink{structTTree_1_1Node}{Node} $\ast$parent, \hyperlink{structTTree_1_1Node}{Node} $\ast$child)
 \begin{DoxyCompactList}\small\item\em Randomly insert node {\ttfamily child} as child of node {\ttfamily parent} \end{DoxyCompactList}\item 
-void \hyperlink{classTTree_ab5eff05ab8d8365737b1eef83ac3ee87}{verify\+Recur} (const \hyperlink{structTTree_1_1Node}{Node} $\ast$const \&p, std\+::set$<$ const \hyperlink{structBlock}{Block} $\ast$ $>$ \&blocks) const 
+void \hyperlink{classTTree_ab50938f36651a0cb2077ae84de2576a7}{verify\+Recur} (\hyperlink{structTTree_1_1Node}{Node} $\ast$const \&p, std\+::set$<$ const \hyperlink{structBlock}{Block} $\ast$ $>$ \&blocks) const 
 \begin{DoxyCompactList}\small\item\em Used by Tree\+::verify. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -81,13 +82,6 @@ std\+::vector$<$ \hyperlink{structTTree_1_1Node}{Node} $>$ \hyperlink{classTTree
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classTTree_a86fa5aaf9e0e661ab3711fc70c99070e}
-\hypertarget{classTTree_a392d80512f4336cdc8f60eee4377e668}{}\index{T\+Tree@{T\+Tree}!````~T\+Tree@{$\sim$\+T\+Tree}}
-\index{````~T\+Tree@{$\sim$\+T\+Tree}!T\+Tree@{T\+Tree}}
-\subsubsection[{$\sim$\+T\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::$\sim$\+T\+Tree (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTTree_a392d80512f4336cdc8f60eee4377e668}
 \hypertarget{classTTree_ad7fb8543e084eea4a24571f3cb979555}{}\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \subsubsection[{T\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+T\+Tree (
@@ -95,20 +89,16 @@ std\+::vector$<$ \hyperlink{structTTree_1_1Node}{Node} $>$ \hyperlink{classTTree
 \item[{const {\bf T\+Tree} \&}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_ad7fb8543e084eea4a24571f3cb979555}
+\hypertarget{classTTree_acfa1c1f035255298fd22be8810d5d672}{}\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
+\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
+\subsubsection[{T\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+T\+Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+Tree} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classTTree_acfa1c1f035255298fd22be8810d5d672}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classTTree_ae84ee6af5647439489b8d06c05cb2f8e}{}\index{T\+Tree@{T\+Tree}!delete\+Recur@{delete\+Recur}}
-\index{delete\+Recur@{delete\+Recur}!T\+Tree@{T\+Tree}}
-\subsubsection[{delete\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::delete\+Recur (
-\begin{DoxyParamCaption}
-\item[{{\bf Node} $\ast$\&}]{p}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_ae84ee6af5647439489b8d06c05cb2f8e}
-
-
-Used by \hyperlink{classTTree_a392d80512f4336cdc8f60eee4377e668}{T\+Tree\+::$\sim$\+T\+Tree()} 
-
 \hypertarget{classTTree_ab9b74f48afd54c16fd1dc3b598019f7f}{}\index{T\+Tree@{T\+Tree}!detach@{detach}}
 \index{detach@{detach}!T\+Tree@{T\+Tree}}
 \subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree\+::\+Node} $\ast$ T\+Tree\+::detach (
@@ -121,7 +111,7 @@ Used by \hyperlink{classTTree_a392d80512f4336cdc8f60eee4377e668}{T\+Tree\+::$\si
 Detach a node from the tree This is a random procedure. 
 
 \begin{DoxyReturn}{Returns}
-\+: the node 
+The node 
 \end{DoxyReturn}
 \hypertarget{classTTree_a7e34e70567be7961d4a5683010746aae}{}\index{T\+Tree@{T\+Tree}!get\+Placement@{get\+Placement}}
 \index{get\+Placement@{get\+Placement}!T\+Tree@{T\+Tree}}
@@ -134,20 +124,23 @@ Detach a node from the tree This is a random procedure.
 
 Build a placement accroding to this tree. 
 
-\hypertarget{classTTree_a15f3075fa4f2bae22a681a1c2889692c}{}\index{T\+Tree@{T\+Tree}!get\+Placement\+Recur@{get\+Placement\+Recur}}
+\hypertarget{classTTree_a4852b91528cb10c01d05a2ff8f20fe4b}{}\index{T\+Tree@{T\+Tree}!get\+Placement\+Recur@{get\+Placement\+Recur}}
 \index{get\+Placement\+Recur@{get\+Placement\+Recur}!T\+Tree@{T\+Tree}}
-\subsubsection[{get\+Placement\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::get\+Placement\+Recur (
+\subsubsection[{get\+Placement\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Contour\+List\+::\+Node} $\ast$ T\+Tree\+::get\+Placement\+Recur (
 \begin{DoxyParamCaption}
 \item[{const {\bf Node} $\ast$}]{p, }
 \item[{{\bf Contour\+List\+::\+Node} $\ast$}]{q, }
 \item[{double}]{z, }
 \item[{{\bf Placement} \&}]{placement}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_a15f3075fa4f2bae22a681a1c2889692c}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_a4852b91528cb10c01d05a2ff8f20fe4b}
 
 
 Used by \hyperlink{classTTree_a7e34e70567be7961d4a5683010746aae}{T\+Tree\+::get\+Placement}. 
 
+\begin{DoxyReturn}{Returns}
+The node replaced q 
+\end{DoxyReturn}
 \hypertarget{classTTree_a7be152bf003a3b7a41a0d2f2b8a60dcb}{}\index{T\+Tree@{T\+Tree}!initialize@{initialize}}
 \index{initialize@{initialize}!T\+Tree@{T\+Tree}}
 \subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::initialize (
@@ -168,8 +161,13 @@ Randomly initialize a tree with given blocks.
 )}\label{classTTree_a39407b0d5bb0419d5930a264f909d240}
 
 
-Randomly initialize a tree with given const blocks pointers @1 \+: blocks. The given blocks. Shouldn\textquotesingle{}t be const \&. 
+Randomly initialize a tree with given const blocks pointers. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & The given blocks. Shouldn\textquotesingle{}t be const \& \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTTree_aa4a9d2b247a7f9c33d1834fd23de7cca}{}\index{T\+Tree@{T\+Tree}!initialize\+Recur@{initialize\+Recur}}
 \index{initialize\+Recur@{initialize\+Recur}!T\+Tree@{T\+Tree}}
 \subsubsection[{initialize\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::initialize\+Recur (
@@ -202,6 +200,13 @@ Randomly insert node {\ttfamily child} as child of node {\ttfamily parent}
 \item[{const {\bf T\+Tree} \&}]{}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_a3c4da2361311ac5903822a2151865ae6}
+\hypertarget{classTTree_a8751a54d1c80d2f822d84a98e5c96293}{}\index{T\+Tree@{T\+Tree}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+Tree@{T\+Tree}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree}\& T\+Tree\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+Tree} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\label{classTTree_a8751a54d1c80d2f822d84a98e5c96293}
 \hypertarget{classTTree_acd9ed57c09bb59a5fcf618b8e215d584}{}\index{T\+Tree@{T\+Tree}!rand\+Node@{rand\+Node}}
 \index{rand\+Node@{rand\+Node}!T\+Tree@{T\+Tree}}
 \subsubsection[{rand\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree\+::\+Node} $\ast$ T\+Tree\+::rand\+Node (
@@ -281,18 +286,23 @@ Swap content of two node but not affecting the tree structure.
 
 Verify the some correctness of the tree Uses assert. 
 
-\hypertarget{classTTree_ab5eff05ab8d8365737b1eef83ac3ee87}{}\index{T\+Tree@{T\+Tree}!verify\+Recur@{verify\+Recur}}
+\hypertarget{classTTree_ab50938f36651a0cb2077ae84de2576a7}{}\index{T\+Tree@{T\+Tree}!verify\+Recur@{verify\+Recur}}
 \index{verify\+Recur@{verify\+Recur}!T\+Tree@{T\+Tree}}
 \subsubsection[{verify\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::verify\+Recur (
 \begin{DoxyParamCaption}
-\item[{const {\bf Node} $\ast$const \&}]{p, }
+\item[{{\bf Node} $\ast$const \&}]{p, }
 \item[{std\+::set$<$ const {\bf Block} $\ast$ $>$ \&}]{blocks}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_ab5eff05ab8d8365737b1eef83ac3ee87}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_ab50938f36651a0cb2077ae84de2576a7}
 
 
 Used by Tree\+::verify. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Should be $\ast$ const \&, instead of const $\ast$ const \&. Type conversion will change the address \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}

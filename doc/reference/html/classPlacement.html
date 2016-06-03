@@ -101,6 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for Placement:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlacement__coll__graph.png" border="0" usemap="#Placement_coll__map" alt="Collaboration graph"/></div>
+<map name="Placement_coll__map" id="Placement_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -118,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a686b1f2aa26ae12285a5759d1b6e5f67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#a686b1f2aa26ae12285a5759d1b6e5f67">getVolume</a> () const </td></tr>
 <tr class="memdesc:a686b1f2aa26ae12285a5759d1b6e5f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the volume of the bounding box.  <a href="#a686b1f2aa26ae12285a5759d1b6e5f67">More...</a><br /></td></tr>
 <tr class="separator:a686b1f2aa26ae12285a5759d1b6e5f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479626954e228086398665507bed9beb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#a479626954e228086398665507bed9beb">getNetVolume</a> () const </td></tr>
+<tr class="memdesc:a479626954e228086398665507bed9beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get total volume of every blocks.  <a href="#a479626954e228086398665507bed9beb">More...</a><br /></td></tr>
+<tr class="separator:a479626954e228086398665507bed9beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21dc44cf496d771e5c2ac17a24ac1703"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#a21dc44cf496d771e5c2ac17a24ac1703">addBlock</a> (const <a class="el" href="structRotatableBlock.html">RotatableBlock</a> &amp;_block, double _y, double _z)</td></tr>
 <tr class="memdesc:a21dc44cf496d771e5c2ac17a24ac1703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one block into this placement.  <a href="#a21dc44cf496d771e5c2ac17a24ac1703">More...</a><br /></td></tr>
 <tr class="separator:a21dc44cf496d771e5c2ac17a24ac1703"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +162,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3e9d90f2d85b6641d2fd7d74d2600394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed710205286315a2a14f8cc2ceacd267"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#aed710205286315a2a14f8cc2ceacd267">z2</a></td></tr>
 <tr class="separator:aed710205286315a2a14f8cc2ceacd267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe51f89ddfdb2d27b68449d96f50e24d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlacement.html#afe51f89ddfdb2d27b68449d96f50e24d">netVolume</a></td></tr>
+<tr class="memdesc:afe51f89ddfdb2d27b68449d96f50e24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total volume of every blocks.  <a href="#afe51f89ddfdb2d27b68449d96f50e24d">More...</a><br /></td></tr>
+<tr class="separator:afe51f89ddfdb2d27b68449d96f50e24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A compact placement of blocks. </p>
@@ -216,6 +224,31 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add one block into this placement. </p>
+
+</div>
+</div>
+<a class="anchor" id="a479626954e228086398665507bed9beb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Placement::getNetVolume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get total volume of every blocks. </p>
 
 </div>
 </div>
@@ -497,6 +530,28 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="afe51f89ddfdb2d27b68449d96f50e24d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Placement::netVolume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Total volume of every blocks. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5c4c9527336f2c2c18e2c6234aad8878"></a>
 <div class="memitem">
 <div class="memproto">

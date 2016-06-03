@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../structContourList_1_1Node.html#a034f1203c181859eff8925b7f3549f37',1,'ContourList::Node::operator=()'],['../classRandom.html#acc7a4d85a416a090cde22c9273e01f1e',1,'Random::operator=()'],['../classTTree.html#a3c4da2361311ac5903822a2151865ae6',1,'TTree::operator=()'],['../structTTree_1_1Node.html#a20ffdb80255bcabcdff42201b961869e',1,'TTree::Node::operator=()']]],
-  ['overlapping2d',['overlapping2D',['../classPlacement.html#a9d95d0c91c23c7c8d627a81ed03ffa13',1,'Placement']]],
-  ['overlappingxy',['overlappingXY',['../classPlacement.html#ab87e46b2e8e64fd0be0c07b74651cd82',1,'Placement']]],
-  ['overlappingxyz',['overlappingXYZ',['../classPlacement.html#aedd3513c4fc7a9cccd83144c65c83c00',1,'Placement']]],
-  ['overlappingxz',['overlappingXZ',['../classPlacement.html#af6823b9b781ae186e922774bb4623b17',1,'Placement']]],
-  ['overlappingyz',['overlappingYZ',['../classPlacement.html#a2f0b907f20632d98c1169e7c3ad427db',1,'Placement']]]
+  ['node',['Node',['../structContourList_1_1Node.html#aa5a6173b45499956934fea3f0f988937',1,'ContourList::Node::Node(const Node &amp;)=delete'],['../structContourList_1_1Node.html#abfb23cff73a9962b3afdb1de1d6457ea',1,'ContourList::Node::Node(Node &amp;&amp;)'],['../structContourList_1_1Node.html#ac4e773feed1974871bd67d8d9575d3b9',1,'ContourList::Node::Node(double _y, double _z1, double _z2)'],['../structTTree_1_1Node.html#acd5412e99e3b645fafd222e15388277b',1,'TTree::Node::Node(const RotatableBlock &amp;_block)'],['../structTTree_1_1Node.html#a6b9ce78ca08f3648379cf135d6796092',1,'TTree::Node::Node(const Node &amp;)=delete'],['../structTTree_1_1Node.html#a78c5f48ae1323abc4b9186f1b7e89dd1',1,'TTree::Node::Node(Node &amp;&amp;)']]]
 ];
