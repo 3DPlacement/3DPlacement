@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['verify',['verify',['../classPlacement.html#a7e54624dff8703581efc6be7d1af991e',1,'Placement::verify()'],['../classTTree.html#a561ca642fa6104a2275c30974b57e221',1,'TTree::verify()']]],
-  ['verifyrecur',['verifyRecur',['../classTTree.html#ab50938f36651a0cb2077ae84de2576a7',1,'TTree']]]
+  ['ttree',['TTree',['../classTTree.html#a86fa5aaf9e0e661ab3711fc70c99070e',1,'TTree::TTree()'],['../classTTree.html#ad7fb8543e084eea4a24571f3cb979555',1,'TTree::TTree(const TTree &amp;)=delete'],['../classTTree.html#acfa1c1f035255298fd22be8810d5d672',1,'TTree::TTree(TTree &amp;&amp;)=default']]]
 ];

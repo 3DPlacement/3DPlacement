@@ -2,7 +2,7 @@
 3DPlacement
 =========
 
-An algorithm to place 3D blocks in a small volume, referring to *Temporal Floorplanning Using the T-tree Formulation [iccad04]*
+An algorithm to place 3D blocks in a small volume, referring to *Temporal Floorplanning Using the T-tree Formulation [iccad04]*.
 
 
 Build
@@ -28,8 +28,21 @@ Or build test
 Run
 ---------
 
+
+To do with test data, first go to the `testcase` directory
+
+    cd ../testcase
+
 Execute
 
     ./gen <n> > blocks.in
 
-to generate <n> blocks to input file blocks.in
+to generate <n> blocks to input file blocks.in.
+
+Modify `blocks.conf` to adjust parameters for simulated annealing. See the comments in that file for details.
+
+Execute
+
+    ../src/3DPlacement_release blocks.in blocks.conf blocks.out
+
+to generate a minimal placement into `blocks.out`. Plase do use release build unless doing debugging, because the debug build will not renew random seeds.

@@ -1,0 +1,44 @@
+\hypertarget{gen_8cpp}{}\section{gen.\+cpp File Reference}
+\label{gen_8cpp}\index{gen.\+cpp@{gen.\+cpp}}
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for gen.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{gen_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{gen_8cpp_a60bca9fc56d141b9ec796c29b1abf0cc}{rand\+Double} (double l, double r)
+\begin{DoxyCompactList}\small\item\em This program randomly generates the input It generates n blocks, where n is from the command line argument. \end{DoxyCompactList}\item 
+int \hyperlink{gen_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{gen_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\index{gen.\+cpp@{gen.\+cpp}!main@{main}}
+\index{main@{main}!gen.\+cpp@{gen.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\label{gen_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+\hypertarget{gen_8cpp_a60bca9fc56d141b9ec796c29b1abf0cc}{}\index{gen.\+cpp@{gen.\+cpp}!rand\+Double@{rand\+Double}}
+\index{rand\+Double@{rand\+Double}!gen.\+cpp@{gen.\+cpp}}
+\subsubsection[{rand\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double rand\+Double (
+\begin{DoxyParamCaption}
+\item[{double}]{l, }
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{gen_8cpp_a60bca9fc56d141b9ec796c29b1abf0cc}
+
+
+This program randomly generates the input It generates n blocks, where n is from the command line argument. 
+
+It outputs to stdout with the format below\+: The first line contains one number \+: n Each of the following line contains 3 numbers for each block as \+: x y hgen random double in range \mbox{[}l, r\mbox{]} 

@@ -1,0 +1,192 @@
+\hypertarget{classTTree_1_1Node}{}\section{T\+Tree\+:\+:Node Class Reference}
+\label{classTTree_1_1Node}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+
+
+Internal class. A node of T Tree.  
+
+
+
+
+Collaboration diagram for T\+Tree\+:\+:Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classTTree_1_1Node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTTree_1_1Node_a73f229145664a7b5ce0c41746ba4e881}{Node} (const \hyperlink{structRotatableBlock}{Rotatable\+Block} \&\+\_\+block, \hyperlink{classTTree_1_1Node}{Node} $\ast$\+\_\+l=N\+U\+L\+L, \hyperlink{classTTree_1_1Node}{Node} $\ast$\+\_\+m=N\+U\+L\+L, \hyperlink{classTTree_1_1Node}{Node} $\ast$\+\_\+r=N\+U\+L\+L, \hyperlink{classTTree_1_1Node}{Node} $\ast$$\ast$\+\_\+in=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em points to pointer point in the node. e.\+g. = \&(parent-\/$>$l) or \&root. \end{DoxyCompactList}\item 
+\hyperlink{classTTree_1_1Node_a464e50288304ef7e9257a182125a474a}{$\sim$\+Node} ()
+\item 
+\hyperlink{classTTree_1_1Node_a6b9ce78ca08f3648379cf135d6796092}{Node} (const \hyperlink{classTTree_1_1Node}{Node} \&)=delete
+\item 
+\hyperlink{classTTree_1_1Node}{Node} \& \hyperlink{classTTree_1_1Node_a20ffdb80255bcabcdff42201b961869e}{operator=} (const \hyperlink{classTTree_1_1Node}{Node} \&)=delete
+\item 
+\hyperlink{classTTree_1_1Node_a78c5f48ae1323abc4b9186f1b7e89dd1}{Node} (\hyperlink{classTTree_1_1Node}{Node} \&\&)
+\item 
+\hyperlink{classTTree_1_1Node}{Node} \& \hyperlink{classTTree_1_1Node_aa3c96d0cacc8d285aee7290a257077b1}{operator=} (\hyperlink{classTTree_1_1Node}{Node} \&\&)
+\item 
+void \hyperlink{classTTree_1_1Node_a12a499962f965e7e226e2af0222747a3}{save} ()
+\begin{DoxyCompactList}\small\item\em save to backup if backup is empty \end{DoxyCompactList}\item 
+void \hyperlink{classTTree_1_1Node_a0a254a0c8103d02053475dd8c523fdc1}{retrieve} ()
+\begin{DoxyCompactList}\small\item\em retrieve from backup and clean backup \end{DoxyCompactList}\item 
+void \hyperlink{classTTree_1_1Node_afb1009d2a47179a4774e42ee5140af36}{discard} ()
+\begin{DoxyCompactList}\small\item\em discard backup \end{DoxyCompactList}\item 
+void \hyperlink{classTTree_1_1Node_a6d989c4974f820a288dcf18cad3e8ed1}{print\+Msg} () const 
+\begin{DoxyCompactList}\small\item\em Print debug message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structRotatableBlock}{Rotatable\+Block} \hyperlink{classTTree_1_1Node_a100664635a89fa354373102768bd22be}{block}
+\item 
+\hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_1_1Node_a78f1bf067928d0e0106e1187364cc69e}{l}
+\item 
+\hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_1_1Node_a3f47f1068b4631b1d9eddea0300c6bee}{m}
+\item 
+\hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_1_1Node_adb67ed846e6787b3ff26bbcee11ee4b6}{r}
+\item 
+\hyperlink{classTTree_1_1Node}{Node} $\ast$$\ast$ \hyperlink{classTTree_1_1Node_ab126c67191b7e91a1eccc18a3eeadf0b}{in}
+\begin{DoxyCompactList}\small\item\em children \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_1_1Node_aa37644a8130b8ea9bd3d3a7d1fcf360b}{backup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Internal class. A node of T Tree. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTTree_1_1Node_a73f229145664a7b5ce0c41746ba4e881}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rotatable\+Block} \&}]{\+\_\+block, }
+\item[{{\bf Node} $\ast$}]{\+\_\+l = {\ttfamily NULL}, }
+\item[{{\bf Node} $\ast$}]{\+\_\+m = {\ttfamily NULL}, }
+\item[{{\bf Node} $\ast$}]{\+\_\+r = {\ttfamily NULL}, }
+\item[{{\bf Node} $\ast$$\ast$}]{\+\_\+in = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTTree_1_1Node_a73f229145664a7b5ce0c41746ba4e881}
+
+
+points to pointer point in the node. e.\+g. = \&(parent-\/$>$l) or \&root. 
+
+\hypertarget{classTTree_1_1Node_a464e50288304ef7e9257a182125a474a}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{$\sim$\+Node}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+Node\+::$\sim$\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_a464e50288304ef7e9257a182125a474a}
+\hypertarget{classTTree_1_1Node_a6b9ce78ca08f3648379cf135d6796092}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_1_1Node_a6b9ce78ca08f3648379cf135d6796092}
+\hypertarget{classTTree_1_1Node_a78c5f48ae1323abc4b9186f1b7e89dd1}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+Node\+::\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_a78c5f48ae1323abc4b9186f1b7e89dd1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTTree_1_1Node_afb1009d2a47179a4774e42ee5140af36}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!discard@{discard}}
+\index{discard@{discard}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{discard}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::\+Node\+::discard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_afb1009d2a47179a4774e42ee5140af36}
+
+
+discard backup 
+
+\hypertarget{classTTree_1_1Node_a20ffdb80255bcabcdff42201b961869e}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}\& T\+Tree\+::\+Node\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_1_1Node_a20ffdb80255bcabcdff42201b961869e}
+\hypertarget{classTTree_1_1Node_aa3c96d0cacc8d285aee7290a257077b1}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree\+::\+Node} \& T\+Tree\+::\+Node\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+Tree\+::\+Node} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_aa3c96d0cacc8d285aee7290a257077b1}
+\hypertarget{classTTree_1_1Node_a6d989c4974f820a288dcf18cad3e8ed1}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!print\+Msg@{print\+Msg}}
+\index{print\+Msg@{print\+Msg}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{print\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::\+Node\+::print\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classTTree_1_1Node_a6d989c4974f820a288dcf18cad3e8ed1}
+
+
+Print debug message. 
+
+\hypertarget{classTTree_1_1Node_a0a254a0c8103d02053475dd8c523fdc1}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{retrieve}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::\+Node\+::retrieve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_a0a254a0c8103d02053475dd8c523fdc1}
+
+
+retrieve from backup and clean backup 
+
+\hypertarget{classTTree_1_1Node_a12a499962f965e7e226e2af0222747a3}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!save@{save}}
+\index{save@{save}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::\+Node\+::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTTree_1_1Node_a12a499962f965e7e226e2af0222747a3}
+
+
+save to backup if backup is empty 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTTree_1_1Node_aa37644a8130b8ea9bd3d3a7d1fcf360b}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!backup@{backup}}
+\index{backup@{backup}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{backup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ T\+Tree\+::\+Node\+::backup\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_1_1Node_aa37644a8130b8ea9bd3d3a7d1fcf360b}
+\hypertarget{classTTree_1_1Node_a100664635a89fa354373102768bd22be}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!block@{block}}
+\index{block@{block}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rotatable\+Block} T\+Tree\+::\+Node\+::block}\label{classTTree_1_1Node_a100664635a89fa354373102768bd22be}
+\hypertarget{classTTree_1_1Node_ab126c67191b7e91a1eccc18a3eeadf0b}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!in@{in}}
+\index{in@{in}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{in}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$$\ast$ T\+Tree\+::\+Node\+::in}\label{classTTree_1_1Node_ab126c67191b7e91a1eccc18a3eeadf0b}
+
+
+children 
+
+\hypertarget{classTTree_1_1Node_a78f1bf067928d0e0106e1187364cc69e}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!l@{l}}
+\index{l@{l}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{l}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ T\+Tree\+::\+Node\+::l}\label{classTTree_1_1Node_a78f1bf067928d0e0106e1187364cc69e}
+\hypertarget{classTTree_1_1Node_a3f47f1068b4631b1d9eddea0300c6bee}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!m@{m}}
+\index{m@{m}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ T\+Tree\+::\+Node\+::m}\label{classTTree_1_1Node_a3f47f1068b4631b1d9eddea0300c6bee}
+\hypertarget{classTTree_1_1Node_adb67ed846e6787b3ff26bbcee11ee4b6}{}\index{T\+Tree\+::\+Node@{T\+Tree\+::\+Node}!r@{r}}
+\index{r@{r}!T\+Tree\+::\+Node@{T\+Tree\+::\+Node}}
+\subsubsection[{r}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node} $\ast$ T\+Tree\+::\+Node\+::r}\label{classTTree_1_1Node_adb67ed846e6787b3ff26bbcee11ee4b6}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{TTree_8h}{T\+Tree.\+h}\item 
+\hyperlink{TTree_8cpp}{T\+Tree.\+cpp}\end{DoxyCompactItemize}
