@@ -2,6 +2,7 @@
 *.o
 *.gch
 *.swp
+*.exe
 test
 gen
 3DPlacement_release

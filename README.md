@@ -5,6 +5,12 @@
 An algorithm to place 3D blocks in a small volume, referring to *Temporal Floorplanning Using the T-tree Formulation [iccad04]*.
 
 
+Documentation
+---------
+
+***Please refer to `doc/document.docx` for full documentation.***
+
+
 Build
 ---------
 
