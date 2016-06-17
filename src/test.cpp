@@ -10,9 +10,9 @@
 #include "Random.h"
 #include "Placement.h"
 
-const int blockNum = 500;
+const int blockNum = 50;
 const int testNum = 100;
-const int perturbNum = 100;
+const int perturbNum = 10;
 
 const double maxBlockSize = 10;
 
@@ -20,6 +20,7 @@ int main()
 {
     for (int i = 0; i < testNum; i++)
     {
+        double lastV = INFINITY, curV = INFINITY;
         std::cout << "Test " << i << std::endl;
         std::vector<Block> blocks;
         blocks.reserve(blockNum);
@@ -37,10 +38,35 @@ int main()
         Placement placement;
         placement = tree.getPlacement();
         placement.verify();
-        std::cout << "  Volume = " << placement.getVolume() << std::endl;
+        std::cout << "  Volume = " << (lastV = placement.getVolume()) << std::endl;
         for (int j = 0; j < perturbNum; j++)
         {
             std::cout << "  Perturb " << j << std::endl;
+
+            std::cout << "    1. modify and undo" << std::endl;
+            switch (Random::getInstance().getRandomInt(0, 2))
+            {
+            case 0:
+                tree.randomMove();
+                break;
+            case 1:
+                tree.randomSwap();
+                break;
+            case 2:
+                tree.randomRotate();
+                break;
+            default:
+                assert(false);
+            }
+            tree.verify();
+            tree.undo();
+            tree.verify();
+            placement = tree.getPlacement();
+            placement.verify();
+            std::cout << "    Volume = " << (curV = placement.getVolume()) << std::endl;
+            assert(lastV == curV);
+
+            std::cout << "    2. modify" << std::endl;
             switch (Random::getInstance().getRandomInt(0, 2))
             {
             case 0:
@@ -58,7 +84,7 @@ int main()
             tree.verify();
             placement = tree.getPlacement();
             placement.verify();
-            std::cout << "  Volume = " << placement.getVolume() << std::endl;
+            std::cout << "    Volume = " << (lastV = placement.getVolume()) << std::endl;
         }
     }
     return 0;

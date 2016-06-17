@@ -60,21 +60,100 @@ ContourList::Node *TTree::getPlacementRecur(
     return q;
 }
 
+void TTree::randomMove()
+{
+    assert(pool.size() > 2);
+    for (Node *item : undoList) item->discard();
+    undoList.clear();
+    // Do not use randPair here
+    Node *p(NULL), *q(randNode());
+    Node **oriIn = q->in; // MUST, for undo
+    q = detach(q);
+    do p = randNode(); while (p == q || &(p->l) == oriIn || &(p->m) == oriIn || &(p->r) == oriIn);
+    insert(p, q);
+}
+
+void TTree::randomSwap()
+{
+    assert(pool.size() > 1);
+    for (Node *item : undoList) item->discard();
+    undoList.clear();
+    Node *p(NULL), *q(NULL);
+    randPair(p, q);
+    p->save(), undoList.push_back(p);
+    q->save(), undoList.push_back(q);
+    swapNode(p, q);
+}
+
+void TTree::randomRotate()
+{
+    assert(pool.size() > 0);
+    for (Node *item : undoList) item->discard();
+    undoList.clear();
+    Node *p = randNode();
+    p->save(), undoList.push_back(p);
+    RotatableBlock::ROTATE_NAME oriRotation = p->block.rotation;
+    do
+        p->block.rotation = RotatableBlock::getRandRotate();
+    while (p->block.rotation == oriRotation);
+}
+
+void TTree::undo()
+{
+    assert(! undoList.empty());
+    for (Node *item : undoList)
+        item->retrieve();
+    undoList.clear();
+}
+
+TTree::Node::~Node()
+{
+    if (backup) delete backup;
+}
+
 TTree::Node::Node(Node &&rhs)
     : block(rhs.block), l(rhs.l), m(rhs.m), r(rhs.r), in(rhs.in)
 {
     *in = this;
+    if (l) l->in = &l;
+    if (m) m->in = &m;
+    if (r) r->in = &r;
 }
 
 TTree::Node &TTree::Node::operator=(TTree::Node &&rhs)
 {
     block = rhs.block, l = rhs.l, m = rhs.m, r = rhs.r, in = rhs.in;
     *in = this;
+    if (l) l->in = &l;
+    if (m) m->in = &m;
+    if (r) r->in = &r;
     return *this;
+}
+
+void TTree::Node::save()
+{
+    if (backup) return;
+    backup = new Node(block, l, m, r, in);
+}
+
+void TTree::Node::retrieve()
+{
+    if (! backup) return;
+    *this = std::move(*backup);
+    delete backup;
+    backup = NULL;
+}
+
+void TTree::Node::discard()
+{
+    if (! backup) return;
+    delete backup;
+    backup = NULL;
 }
 
 void TTree::swapNode(TTree::Node *p, TTree::Node *q)
 {
+    // don't do backup here because it is also called from `insert`
     std::swap(p->block, q->block);
 }
 
@@ -83,6 +162,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
 #ifndef NDEBUG
     const Block *oriBlock = p->block.block; // used for checking
 #endif
+    p->save(), undoList.push_back(p);
     while (p->l || p->m || p->r)
     {
         int cnt(0);
@@ -91,6 +171,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
         if (p->m) child[cnt++] = p->m;
         if (p->r) child[cnt++] = p->r;
         Node *q = child[Random::getInstance().getRandomInt(0, cnt - 1)];
+        q->save(), undoList.push_back(q);
         swapNode(p, q);
         p = q;
     }
@@ -102,6 +183,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
 void TTree::insert(Node *parent, Node *child)
 {
     assert(!child->l && !child->m && !child->r && !child->in);
+    parent->save(), undoList.push_back(parent);
     Node* Node::*candidates[3] = { &Node::l, &Node::m, &Node::r };
     Node* Node::*c = candidates[Random::getInstance().getRandomInt(0, 2)];
     child->*c = parent->*c;

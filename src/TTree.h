@@ -33,12 +33,14 @@ public:
 
     /**
      * Randomly move one node to another position.
+     * Requires at least 3 nodes in the tree.
      * O(h). h is the height of the tree.
      */
     void randomMove();
 
     /**
      * Randomly swap two nodes.
+     * Requires at least 2 nodes in the tree.
      * O(1).
      */
     void randomSwap();
@@ -48,6 +50,11 @@ public:
      * O(1).
      */
     void randomRotate();
+
+    /**
+     * Undo last operation
+     */
+    void undo();
 
     TTree(const TTree &) = delete;
     TTree &operator=(const TTree &) = delete;
@@ -64,24 +71,36 @@ public:
 
 private:
     /// Internal class. A node of T Tree.
-    struct Node
+    class Node
     {
+    public:
         RotatableBlock block;
         Node *l, *m, *r; /// children
         Node **in; /// points to pointer point in the node. e.g. = &(parent->l) or &root.
 
-        Node(const RotatableBlock &_block)
-            : block(_block), l(NULL), m(NULL), r(NULL), in(NULL) {}
+        Node(const RotatableBlock &_block, Node *_l = NULL, Node *_m = NULL, Node *_r = NULL, Node **_in = NULL)
+            : block(_block), l(_l), m(_m), r(_r), in(_in), backup(NULL) {}
+        ~Node();
 
         Node(const Node &) = delete;
         Node &operator=(const Node &) = delete;
         Node(Node &&);
         Node &operator=(Node &&);
 
+        /// save to backup if backup is empty
+        void save();
+        /// retrieve from backup and clean backup
+        void retrieve();
+        /// discard backup
+        void discard();
+
 #ifndef NDEBUG
         /// Print debug message
         void printMsg() const;
 #endif // NDEBUG
+
+    private:
+        Node *backup; /// backup to undo
     };
 
     /// Used by TTree::initialize
@@ -133,6 +152,9 @@ private:
 
     /// Node pool. This helps map an id to a node
     std::vector<Node> pool;
+
+    /// Nodes that need to undo
+    std::vector<Node*> undoList;
 };
 
 inline TTree::Node *TTree::randNode()
@@ -144,31 +166,6 @@ inline void TTree::randPair(Node *&p, Node *&q)
 {
     assert(pool.size() > 1);
     do p = randNode(), q = randNode(); while (p == q);
-}
-
-inline void TTree::randomMove()
-{
-    // Do not use randPair here
-    Node *p(NULL), *q(randNode());
-    q = detach(q);
-    do p = randNode(); while (p == q);
-    insert(p, q);
-}
-
-inline void TTree::randomSwap()
-{
-    Node *p(NULL), *q(NULL);
-    randPair(p, q);
-    swapNode(p, q);
-}
-
-inline void TTree::randomRotate()
-{
-    Node *p = randNode();
-    RotatableBlock::ROTATE_NAME oriRotation = p->block.rotation;
-    do
-        p->block.rotation = RotatableBlock::getRandRotate();
-    while (p->block.rotation == oriRotation);
 }
 
 #endif // T_TREE_H_
