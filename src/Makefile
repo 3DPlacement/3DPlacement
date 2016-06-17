@@ -7,6 +7,8 @@ ifeq ($(OS),Windows_NT)
 	RM = del
 endif
 
+all : release gen
+
 release : CXXFLAGS = $(RELEASE_FLAG)
 release : 3DPlacement_release
 
@@ -38,8 +40,11 @@ main_%.o : main.cpp
 test.o : test.cpp TTree.h Block.h Random.h Placement.h ContourList.h
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
+gen : gen.cpp
+	$(CC) $(RELEASE_FLAG) $< -o $@
+
 clean :
 	-$(RM) *.o *.gch 3DPlacement_debug 3DPlacement_release test
 
-.PHONY : release debug clean
+.PHONY : all release debug clean
 .SECONDARY :

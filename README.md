@@ -25,3 +25,11 @@ Or build test
     make test
 
 
+Run
+---------
+
+Execute
+
+    ./gen <n> > blocks.in
+
+to generate <n> blocks to input file blocks.in
