@@ -44,7 +44,7 @@ gen : gen.cpp
 	$(CC) $(RELEASE_FLAG) $< -o $@
 
 clean :
-	-$(RM) *.o *.gch 3DPlacement_debug 3DPlacement_release test
+	-$(RM) *.o *.gch 3DPlacement_debug 3DPlacement_release test gen
 
 .PHONY : all release debug clean
 .SECONDARY :

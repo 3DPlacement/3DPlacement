@@ -2,3 +2,7 @@
 *.o
 *.gch
 *.swp
+test
+gen
+3DPlacement_release
+3DPlacement_debug
