@@ -11,7 +11,7 @@ public:
     ~TTree_data() { if (treeBak) delete treeBak; }
     double getans(){ return 1.0 - NetV / tree->getPlacement().getVolume(); }
     void move();
-    void undo() { *tree = *treeBak; delete treeBak; treeBak = 0; }
+    void undo() { *tree = std::move(*treeBak); delete treeBak; treeBak = 0; }
     void update(){ minplacement=tree->getPlacement(); }
     Placement get_best_Placement(){ return minplacement; }
 
