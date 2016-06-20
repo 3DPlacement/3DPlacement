@@ -15,12 +15,16 @@ TTree_data::TTree_data(double _pMove,double _pSwap,TTree* _tree)
 
 void TTree_data::move()
 {
-     double method(Random::getInstance().getRandomDouble(0, 1));
-     if (method < pMove)
-         tree->randomMove();
-     else if (method < pMove + pSwap)
-         tree->randomSwap();
-     else
-         tree->randomRotate();
+    treeBak = new TTree(*tree);
+    for (int i = 0; i < 10; i++)
+    {
+        double method(Random::getInstance().getRandomDouble(0, 1));
+        if (method < pMove)
+            tree->randomMove();
+        else if (method < pMove + pSwap)
+            tree->randomSwap();
+        else
+            tree->randomRotate();
+    }
 }
 

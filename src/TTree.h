@@ -54,10 +54,10 @@ public:
     /**
      * Undo last operation
      */
-    void undo();
-
-    TTree(const TTree &) = delete;
-    TTree &operator=(const TTree &) = delete;
+    //void undo();
+    
+    TTree(const TTree &);
+    TTree &operator=(const TTree &);
     TTree(TTree &&) = default;
     TTree &operator=(TTree &&) = default;
 
@@ -79,8 +79,8 @@ private:
         Node **in; /// points to pointer point in the node. e.g. = &(parent->l) or &root.
 
         Node(const RotatableBlock &_block, Node *_l = NULL, Node *_m = NULL, Node *_r = NULL, Node **_in = NULL)
-            : block(_block), l(_l), m(_m), r(_r), in(_in), backup(NULL) {}
-        ~Node();
+            : block(_block), l(_l), m(_m), r(_r), in(_in) {}
+        //~Node();
 
         Node(const Node &) = delete;
         Node &operator=(const Node &) = delete;
@@ -88,23 +88,29 @@ private:
         Node &operator=(Node &&);
 
         /// save to backup if backup is empty
-        void save();
+        //void save();
         /// retrieve from backup and clean backup
-        void retrieve();
+        //void retrieve();
         /// discard backup
-        void discard();
+        //void discard();
 
 #ifndef NDEBUG
         /// Print debug message
         void printMsg() const;
 #endif // NDEBUG
 
-    private:
-        Node *backup; /// backup to undo
+    //private:
+    //    Node *backup; /// backup to undo
     };
 
     /// Used by TTree::initialize
     void initializeRecur(Node *&p, size_t id, const std::vector<const Block*> &blocks);
+
+    /**
+     * used by copy constructor and operator
+     * copy p to q
+     */
+    void copyRecur(const Node *p, Node *&q);
 
     struct subtree_t
     {
@@ -154,7 +160,7 @@ private:
     std::vector<Node> pool;
 
     /// Nodes that need to undo
-    std::vector<Node*> undoList;
+    //std::vector<Node*> undoList;
 };
 
 inline TTree::Node *TTree::randNode()

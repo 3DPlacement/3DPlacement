@@ -15,7 +15,7 @@ void TTree::initialize(const std::vector<Block> &blocks)
 
 void TTree::initialize(std::vector<const Block*> blocks)
 {
-    pool.reserve(blocks.size());
+    pool.reserve(blocks.size()); // MUST. to prevent copy and free heap
     std::shuffle(blocks.begin(), blocks.end(), Random::getInstance().getEngine());
     initializeRecur(root, 0, blocks);
 }
@@ -63,8 +63,8 @@ ContourList::Node *TTree::getPlacementRecur(
 void TTree::randomMove()
 {
     assert(pool.size() > 2);
-    for (Node *item : undoList) item->discard();
-    undoList.clear();
+    //for (Node *item : undoList) item->discard();
+    //undoList.clear();
     // Do not use randPair here
     Node *p(NULL), *q(randNode());
     Node **oriIn = q->in; // MUST, for undo
@@ -76,40 +76,64 @@ void TTree::randomMove()
 void TTree::randomSwap()
 {
     assert(pool.size() > 1);
-    for (Node *item : undoList) item->discard();
-    undoList.clear();
+    //for (Node *item : undoList) item->discard();
+    //undoList.clear();
     Node *p(NULL), *q(NULL);
     randPair(p, q);
-    p->save(), undoList.push_back(p);
-    q->save(), undoList.push_back(q);
+    //p->save(), undoList.push_back(p);
+    //q->save(), undoList.push_back(q);
     swapNode(p, q);
 }
 
 void TTree::randomRotate()
 {
     assert(pool.size() > 0);
-    for (Node *item : undoList) item->discard();
-    undoList.clear();
+    //for (Node *item : undoList) item->discard();
+    //undoList.clear();
     Node *p = randNode();
-    p->save(), undoList.push_back(p);
+    //p->save(), undoList.push_back(p);
     RotatableBlock::ROTATE_NAME oriRotation = p->block.rotation;
     do
         p->block.rotation = RotatableBlock::getRandRotate();
     while (p->block.rotation == oriRotation);
 }
 
-void TTree::undo()
+TTree::TTree(const TTree &rhs)
+{
+    pool.reserve(rhs.pool.size()); // MUST. to prevent copy and free heap
+    copyRecur(rhs.root, root);
+}
+
+TTree &TTree::operator=(const TTree &rhs)
+{
+    pool.clear();
+    pool.reserve(rhs.pool.size()); // MUST. to prevent copy and free heap
+    copyRecur(rhs.root, root);
+    return *this;
+}
+
+void TTree::copyRecur(const TTree::Node *p, TTree::Node *&q)
+{
+    pool.emplace_back(p->block);
+    q = &pool.back();
+    q->in = &q;
+    if (p->l) copyRecur(p->l, q->l);
+    if (p->m) copyRecur(p->m, q->m);
+    if (p->r) copyRecur(p->r, q->r);
+}
+
+/*void TTree::undo()
 {
     assert(! undoList.empty());
     for (Node *item : undoList)
         item->retrieve();
     undoList.clear();
-}
+}*/
 
-TTree::Node::~Node()
+/*TTree::Node::~Node()
 {
     if (backup) delete backup;
-}
+}*/
 
 TTree::Node::Node(Node &&rhs)
     : block(rhs.block), l(rhs.l), m(rhs.m), r(rhs.r), in(rhs.in)
@@ -130,7 +154,7 @@ TTree::Node &TTree::Node::operator=(TTree::Node &&rhs)
     return *this;
 }
 
-void TTree::Node::save()
+/*void TTree::Node::save()
 {
     if (backup) return;
     backup = new Node(block, l, m, r, in);
@@ -149,7 +173,7 @@ void TTree::Node::discard()
     if (! backup) return;
     delete backup;
     backup = NULL;
-}
+}*/
 
 void TTree::swapNode(TTree::Node *p, TTree::Node *q)
 {
@@ -162,7 +186,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
 #ifndef NDEBUG
     const Block *oriBlock = p->block.block; // used for checking
 #endif
-    p->save(), undoList.push_back(p);
+    //p->save(), undoList.push_back(p);
     while (p->l || p->m || p->r)
     {
         int cnt(0);
@@ -171,7 +195,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
         if (p->m) child[cnt++] = p->m;
         if (p->r) child[cnt++] = p->r;
         Node *q = child[Random::getInstance().getRandomInt(0, cnt - 1)];
-        q->save(), undoList.push_back(q);
+        //q->save(), undoList.push_back(q);
         swapNode(p, q);
         p = q;
     }
@@ -183,7 +207,7 @@ TTree::Node *TTree::detach(TTree::Node *p)
 void TTree::insert(Node *parent, Node *child)
 {
     assert(!child->l && !child->m && !child->r && !child->in);
-    parent->save(), undoList.push_back(parent);
+    //parent->save(), undoList.push_back(parent);
     Node* Node::*candidates[3] = { &Node::l, &Node::m, &Node::r };
     Node* Node::*c = candidates[Random::getInstance().getRandomInt(0, 2)];
     child->*c = parent->*c;

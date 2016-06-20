@@ -8,15 +8,16 @@ class TTree_data : public Base_data
 {
 public:
     TTree_data(double _pMove,double _pSwap,TTree* _tree);
+    ~TTree_data() { if (treeBak) delete treeBak; }
     double getans(){ return 1.0 - NetV / tree->getPlacement().getVolume(); }
     void move();
-    void undo(){ tree->undo(); }
+    void undo() { *tree = *treeBak; delete treeBak; treeBak = 0; }
     void update(){ minplacement=tree->getPlacement(); }
     Placement get_best_Placement(){ return minplacement; }
 
 private:
     double pMove,pSwap;
-    TTree* tree;
+    TTree *tree, *treeBak;
     Placement minplacement;
     double NetV;
 };

@@ -43,6 +43,7 @@ int main()
         {
             std::cout << "  Perturb " << j << std::endl;
 
+            TTree _tree = tree;
             std::cout << "    1. modify and undo" << std::endl;
             switch (Random::getInstance().getRandomInt(0, 2))
             {
@@ -59,7 +60,7 @@ int main()
                 assert(false);
             }
             tree.verify();
-            tree.undo();
+            tree = _tree;
             tree.verify();
             placement = tree.getPlacement();
             placement.verify();

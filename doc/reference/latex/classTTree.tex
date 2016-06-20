@@ -38,11 +38,9 @@ void \hyperlink{classTTree_aa5aab663511558247357bd9031f7f523}{random\+Swap} ()
 \begin{DoxyCompactList}\small\item\em Randomly swap two nodes. \end{DoxyCompactList}\item 
 void \hyperlink{classTTree_a72310af81f796797a623145656028bfc}{random\+Rotate} ()
 \begin{DoxyCompactList}\small\item\em Randomly rotate one node\textquotesingle{}s block. \end{DoxyCompactList}\item 
-void \hyperlink{classTTree_a14286d0dba4bda295b7a73ebefbf1bcf}{undo} ()
+\hyperlink{classTTree_ae9c011ce08c03b531ea5b31201be7609}{T\+Tree} (const \hyperlink{classTTree}{T\+Tree} \&)
 \begin{DoxyCompactList}\small\item\em Undo last operation. \end{DoxyCompactList}\item 
-\hyperlink{classTTree_ad7fb8543e084eea4a24571f3cb979555}{T\+Tree} (const \hyperlink{classTTree}{T\+Tree} \&)=delete
-\item 
-\hyperlink{classTTree}{T\+Tree} \& \hyperlink{classTTree_a3c4da2361311ac5903822a2151865ae6}{operator=} (const \hyperlink{classTTree}{T\+Tree} \&)=delete
+\hyperlink{classTTree}{T\+Tree} \& \hyperlink{classTTree_a4367965d303770e89b9b10dc9462c0f3}{operator=} (const \hyperlink{classTTree}{T\+Tree} \&)
 \item 
 \hyperlink{classTTree_acfa1c1f035255298fd22be8810d5d672}{T\+Tree} (\hyperlink{classTTree}{T\+Tree} \&\&)=default
 \item 
@@ -55,6 +53,8 @@ void \hyperlink{classTTree_a561ca642fa6104a2275c30974b57e221}{verify} () const
 \item 
 void \hyperlink{classTTree_aa4a9d2b247a7f9c33d1834fd23de7cca}{initialize\+Recur} (\hyperlink{classTTree_1_1Node}{Node} $\ast$\&p, size\+\_\+t id, const std\+::vector$<$ const \hyperlink{structBlock}{Block} $\ast$ $>$ \&blocks)
 \begin{DoxyCompactList}\small\item\em Used by \hyperlink{classTTree_a7be152bf003a3b7a41a0d2f2b8a60dcb}{T\+Tree\+::initialize}. \end{DoxyCompactList}\item 
+void \hyperlink{classTTree_a54e9506716179e9d2a607ebef51e485f}{copy\+Recur} (const \hyperlink{classTTree_1_1Node}{Node} $\ast$p, \hyperlink{classTTree_1_1Node}{Node} $\ast$\&q)
+\begin{DoxyCompactList}\small\item\em used by copy constructor and operator copy p to q \end{DoxyCompactList}\item 
 \hyperlink{structContourList_1_1Node}{Contour\+List\+::\+Node} $\ast$ \hyperlink{classTTree_a99a5f5452d13f1a3e4b74f8275224beb}{get\+Placement\+Recur} (const \hyperlink{classTTree_1_1Node}{Node} $\ast$p, \hyperlink{structContourList_1_1Node}{Contour\+List\+::\+Node} $\ast$q, double z, \hyperlink{classPlacement}{Placement} \&placement, std\+::list$<$ \hyperlink{structTTree_1_1subtree__t}{subtree\+\_\+t} $>$ \&subtrees) const 
 \begin{DoxyCompactList}\small\item\em Used by \hyperlink{classTTree_a7e34e70567be7961d4a5683010746aae}{T\+Tree\+::get\+Placement}. \end{DoxyCompactList}\item 
 \hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_acd9ed57c09bb59a5fcf618b8e215d584}{rand\+Node} ()
@@ -75,9 +75,7 @@ void \hyperlink{classTTree_ab50938f36651a0cb2077ae84de2576a7}{verify\+Recur} (\h
 \hyperlink{classTTree_1_1Node}{Node} $\ast$ \hyperlink{classTTree_a76972bd24a6d2f940fe1645d008a4a04}{root}
 \item 
 std\+::vector$<$ \hyperlink{classTTree_1_1Node}{Node} $>$ \hyperlink{classTTree_a58f7a793347834e9caee3d87c7202966}{pool}
-\begin{DoxyCompactList}\small\item\em \hyperlink{classTTree_1_1Node}{Node} pool. This helps map an id to a node. \end{DoxyCompactList}\item 
-std\+::vector$<$ \hyperlink{classTTree_1_1Node}{Node} $\ast$ $>$ \hyperlink{classTTree_a384e0ade54dfcb4688d646e3674e964a}{undo\+List}
-\begin{DoxyCompactList}\small\item\em Nodes that need to undo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTTree_1_1Node}{Node} pool. This helps map an id to a node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -88,13 +86,17 @@ std\+::vector$<$ \hyperlink{classTTree_1_1Node}{Node} $\ast$ $>$ \hyperlink{clas
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classTTree_a86fa5aaf9e0e661ab3711fc70c99070e}
-\hypertarget{classTTree_ad7fb8543e084eea4a24571f3cb979555}{}\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
+\hypertarget{classTTree_ae9c011ce08c03b531ea5b31201be7609}{}\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \subsubsection[{T\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+T\+Tree (
 \begin{DoxyParamCaption}
-\item[{const {\bf T\+Tree} \&}]{}
+\item[{const {\bf T\+Tree} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_ad7fb8543e084eea4a24571f3cb979555}
+)}\label{classTTree_ae9c011ce08c03b531ea5b31201be7609}
+
+
+Undo last operation. 
+
 \hypertarget{classTTree_acfa1c1f035255298fd22be8810d5d672}{}\index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \index{T\+Tree@{T\+Tree}!T\+Tree@{T\+Tree}}
 \subsubsection[{T\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+::\+T\+Tree (
@@ -105,6 +107,18 @@ std\+::vector$<$ \hyperlink{classTTree_1_1Node}{Node} $\ast$ $>$ \hyperlink{clas
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classTTree_a54e9506716179e9d2a607ebef51e485f}{}\index{T\+Tree@{T\+Tree}!copy\+Recur@{copy\+Recur}}
+\index{copy\+Recur@{copy\+Recur}!T\+Tree@{T\+Tree}}
+\subsubsection[{copy\+Recur}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::copy\+Recur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Node} $\ast$}]{p, }
+\item[{{\bf T\+Tree\+::\+Node} $\ast$\&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_a54e9506716179e9d2a607ebef51e485f}
+
+
+used by copy constructor and operator copy p to q 
+
 \hypertarget{classTTree_ab9b74f48afd54c16fd1dc3b598019f7f}{}\index{T\+Tree@{T\+Tree}!detach@{detach}}
 \index{detach@{detach}!T\+Tree@{T\+Tree}}
 \subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree\+::\+Node} $\ast$ T\+Tree\+::detach (
@@ -200,13 +214,13 @@ Used by \hyperlink{classTTree_a7be152bf003a3b7a41a0d2f2b8a60dcb}{T\+Tree\+::init
 
 Randomly insert node {\ttfamily child} as child of node {\ttfamily parent} 
 
-\hypertarget{classTTree_a3c4da2361311ac5903822a2151865ae6}{}\index{T\+Tree@{T\+Tree}!operator=@{operator=}}
+\hypertarget{classTTree_a4367965d303770e89b9b10dc9462c0f3}{}\index{T\+Tree@{T\+Tree}!operator=@{operator=}}
 \index{operator=@{operator=}!T\+Tree@{T\+Tree}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree}\& T\+Tree\+::operator= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree} \& T\+Tree\+::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf T\+Tree} \&}]{}
+\item[{const {\bf T\+Tree} \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [delete]}}\label{classTTree_a3c4da2361311ac5903822a2151865ae6}
+)}\label{classTTree_a4367965d303770e89b9b10dc9462c0f3}
 \hypertarget{classTTree_a8751a54d1c80d2f822d84a98e5c96293}{}\index{T\+Tree@{T\+Tree}!operator=@{operator=}}
 \index{operator=@{operator=}!T\+Tree@{T\+Tree}}
 \subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+Tree}\& T\+Tree\+::operator= (
@@ -282,17 +296,6 @@ Randomly choose a pair of different nodes.
 
 Swap content of two node but not affecting the tree structure. 
 
-\hypertarget{classTTree_a14286d0dba4bda295b7a73ebefbf1bcf}{}\index{T\+Tree@{T\+Tree}!undo@{undo}}
-\index{undo@{undo}!T\+Tree@{T\+Tree}}
-\subsubsection[{undo}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::undo (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\label{classTTree_a14286d0dba4bda295b7a73ebefbf1bcf}
-
-
-Undo last operation. 
-
 \hypertarget{classTTree_a561ca642fa6104a2275c30974b57e221}{}\index{T\+Tree@{T\+Tree}!verify@{verify}}
 \index{verify@{verify}!T\+Tree@{T\+Tree}}
 \subsubsection[{verify}]{\setlength{\rightskip}{0pt plus 5cm}void T\+Tree\+::verify (
@@ -334,13 +337,6 @@ Used by Tree\+::verify.
 \hypertarget{classTTree_a76972bd24a6d2f940fe1645d008a4a04}{}\index{T\+Tree@{T\+Tree}!root@{root}}
 \index{root@{root}!T\+Tree@{T\+Tree}}
 \subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ T\+Tree\+::root\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_a76972bd24a6d2f940fe1645d008a4a04}
-\hypertarget{classTTree_a384e0ade54dfcb4688d646e3674e964a}{}\index{T\+Tree@{T\+Tree}!undo\+List@{undo\+List}}
-\index{undo\+List@{undo\+List}!T\+Tree@{T\+Tree}}
-\subsubsection[{undo\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Node}$\ast$$>$ T\+Tree\+::undo\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classTTree_a384e0ade54dfcb4688d646e3674e964a}
-
-
-Nodes that need to undo. 
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

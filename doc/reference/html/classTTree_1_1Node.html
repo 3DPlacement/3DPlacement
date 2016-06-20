@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classTTree_1_1Node-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TTree::Node Class Reference</div>  </div>
@@ -112,8 +111,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a73f229145664a7b5ce0c41746ba4e881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a73f229145664a7b5ce0c41746ba4e881">Node</a> (const <a class="el" href="structRotatableBlock.html">RotatableBlock</a> &amp;_block, <a class="el" href="classTTree_1_1Node.html">Node</a> *_l=NULL, <a class="el" href="classTTree_1_1Node.html">Node</a> *_m=NULL, <a class="el" href="classTTree_1_1Node.html">Node</a> *_r=NULL, <a class="el" href="classTTree_1_1Node.html">Node</a> **_in=NULL)</td></tr>
 <tr class="memdesc:a73f229145664a7b5ce0c41746ba4e881"><td class="mdescLeft">&#160;</td><td class="mdescRight">points to pointer point in the node. e.g. = &amp;(parent-&gt;l) or &amp;root.  <a href="#a73f229145664a7b5ce0c41746ba4e881">More...</a><br /></td></tr>
 <tr class="separator:a73f229145664a7b5ce0c41746ba4e881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464e50288304ef7e9257a182125a474a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a464e50288304ef7e9257a182125a474a">~Node</a> ()</td></tr>
-<tr class="separator:a464e50288304ef7e9257a182125a474a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9ce78ca08f3648379cf135d6796092"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a6b9ce78ca08f3648379cf135d6796092">Node</a> (const <a class="el" href="classTTree_1_1Node.html">Node</a> &amp;)=delete</td></tr>
 <tr class="separator:a6b9ce78ca08f3648379cf135d6796092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20ffdb80255bcabcdff42201b961869e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree_1_1Node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a20ffdb80255bcabcdff42201b961869e">operator=</a> (const <a class="el" href="classTTree_1_1Node.html">Node</a> &amp;)=delete</td></tr>
@@ -122,17 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a78c5f48ae1323abc4b9186f1b7e89dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3c96d0cacc8d285aee7290a257077b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree_1_1Node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#aa3c96d0cacc8d285aee7290a257077b1">operator=</a> (<a class="el" href="classTTree_1_1Node.html">Node</a> &amp;&amp;)</td></tr>
 <tr class="separator:aa3c96d0cacc8d285aee7290a257077b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a499962f965e7e226e2af0222747a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a12a499962f965e7e226e2af0222747a3">save</a> ()</td></tr>
-<tr class="memdesc:a12a499962f965e7e226e2af0222747a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">save to backup if backup is empty  <a href="#a12a499962f965e7e226e2af0222747a3">More...</a><br /></td></tr>
-<tr class="separator:a12a499962f965e7e226e2af0222747a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a254a0c8103d02053475dd8c523fdc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a0a254a0c8103d02053475dd8c523fdc1">retrieve</a> ()</td></tr>
-<tr class="memdesc:a0a254a0c8103d02053475dd8c523fdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve from backup and clean backup  <a href="#a0a254a0c8103d02053475dd8c523fdc1">More...</a><br /></td></tr>
-<tr class="separator:a0a254a0c8103d02053475dd8c523fdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb1009d2a47179a4774e42ee5140af36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#afb1009d2a47179a4774e42ee5140af36">discard</a> ()</td></tr>
-<tr class="memdesc:afb1009d2a47179a4774e42ee5140af36"><td class="mdescLeft">&#160;</td><td class="mdescRight">discard backup  <a href="#afb1009d2a47179a4774e42ee5140af36">More...</a><br /></td></tr>
-<tr class="separator:afb1009d2a47179a4774e42ee5140af36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d989c4974f820a288dcf18cad3e8ed1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#a6d989c4974f820a288dcf18cad3e8ed1">printMsg</a> () const </td></tr>
-<tr class="memdesc:a6d989c4974f820a288dcf18cad3e8ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print debug message.  <a href="#a6d989c4974f820a288dcf18cad3e8ed1">More...</a><br /></td></tr>
+<tr class="memdesc:a6d989c4974f820a288dcf18cad3e8ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">save to backup if backup is empty  <a href="#a6d989c4974f820a288dcf18cad3e8ed1">More...</a><br /></td></tr>
 <tr class="separator:a6d989c4974f820a288dcf18cad3e8ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -148,11 +136,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab126c67191b7e91a1eccc18a3eeadf0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree_1_1Node.html">Node</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#ab126c67191b7e91a1eccc18a3eeadf0b">in</a></td></tr>
 <tr class="memdesc:ab126c67191b7e91a1eccc18a3eeadf0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">children  <a href="#ab126c67191b7e91a1eccc18a3eeadf0b">More...</a><br /></td></tr>
 <tr class="separator:ab126c67191b7e91a1eccc18a3eeadf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:aa37644a8130b8ea9bd3d3a7d1fcf360b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTTree_1_1Node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTTree_1_1Node.html#aa37644a8130b8ea9bd3d3a7d1fcf360b">backup</a></td></tr>
-<tr class="separator:aa37644a8130b8ea9bd3d3a7d1fcf360b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal class. A node of T Tree. </p>
@@ -211,21 +194,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a464e50288304ef7e9257a182125a474a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TTree::Node::~Node </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a6b9ce78ca08f3648379cf135d6796092"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,23 +235,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="afb1009d2a47179a4774e42ee5140af36"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TTree::Node::discard </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>discard backup </p>
-
-</div>
-</div>
 <a class="anchor" id="a20ffdb80255bcabcdff42201b961869e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -337,65 +288,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Print debug message. </p>
-
-</div>
-</div>
-<a class="anchor" id="a0a254a0c8103d02053475dd8c523fdc1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TTree::Node::retrieve </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>retrieve from backup and clean backup </p>
-
-</div>
-</div>
-<a class="anchor" id="a12a499962f965e7e226e2af0222747a3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TTree::Node::save </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 <p>save to backup if backup is empty </p>
+<p>retrieve from backup and clean backup discard backup Print debug message </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa37644a8130b8ea9bd3d3a7d1fcf360b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classTTree_1_1Node.html">Node</a>* TTree::Node::backup</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a100664635a89fa354373102768bd22be"></a>
 <div class="memitem">
 <div class="memproto">

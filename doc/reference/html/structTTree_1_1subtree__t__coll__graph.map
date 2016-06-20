@@ -1,5 +1,5 @@
 <map id="TTree::subtree_t" name="TTree::subtree_t">
-<area shape="rect" id="node2" href="$classTTree_1_1Node.html" title="Internal class. A node of T Tree. " alt="" coords="22,388,119,597"/>
+<area shape="rect" id="node2" href="$classTTree_1_1Node.html" title="Internal class. A node of T Tree. " alt="" coords="22,388,119,539"/>
 <area shape="rect" id="node3" href="$structRotatableBlock.html" title="{RotatableBlock\n|+ rotation\l|+ RotatableBlock()\l+ getL()\l+ getW()\l+ getH()\l+ getRandRotate()\l}" alt="" coords="5,189,136,325"/>
 <area shape="rect" id="node4" href="$structBlock.html" title="Defines a block out of the coordinates. " alt="" coords="33,5,108,127"/>
 </map>
