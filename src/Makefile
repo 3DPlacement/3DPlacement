@@ -15,7 +15,7 @@ release : 3DPlacement_release
 debug : CXXFLAGS = $(DEBUG_FLAG)
 debug : 3DPlacement_debug
 
-3DPlacement_% : ContourList_%.o Placement_%.o Random_%.o TTree_%.o SA_%.o main_%.o
+3DPlacement_% : ContourList_%.o Placement_%.o Random_%.o TTree_%.o SA2_%.o TTreedata_%.o main_%.o
 	$(CC) $(CXXFLAGS) $^ -o $@
 
 test : CXXFLAGS = $(DEBUG_FLAG)
@@ -34,10 +34,13 @@ Random_%.o : Random.cpp Random.h
 TTree_%.o : TTree.cpp TTree.h Block.h Random.h Placement.h ContourList.h
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
-SA_%.o : SA.cpp SA.h Placement.h Block.h ContourList.h TTree.h Random.h
+SA2_%.o : SA2.cpp SA2.h Placement.h Block.h ContourList.h TTree.h Random.h
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
-main_%.o : main.cpp SA.h Placement.h Block.h Random.h ContourList.h TTree.h
+TTreedata_%.o : TTreedata.cpp Basedata.h Block.h Placement.h Block.h ContourList.h TTree.h Random.h
+	$(CC) $(CXXFLAGS) -c $< -o $@
+
+main_%.o : main.cpp SA2.h Placement.h Block.h Random.h ContourList.h TTree.h Basedata.h TTreedata.h
 	$(CC) $(CXXFLAGS) -c $< -o $@
 
 test.o : test.cpp TTree.h Block.h Random.h Placement.h ContourList.h
@@ -47,7 +50,7 @@ gen : gen.cpp
 	$(CC) $(RELEASE_FLAG) $< -o $@
 
 clean :
-	-$(RM) *.o *.gch 3DPlacement_debug 3DPlacement_release test gen
+	-$(RM) *.o *.gch *.exe 3DPlacement_debug 3DPlacement_release test gen
 
 .PHONY : all release debug clean
 .SECONDARY :

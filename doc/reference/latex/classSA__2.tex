@@ -1,0 +1,145 @@
+\hypertarget{classSA__2}{}\section{S\+A\+\_\+2 Class Reference}
+\label{classSA__2}\index{S\+A\+\_\+2@{S\+A\+\_\+2}}
+
+
+Simulated Annealing.  
+
+
+
+
+{\ttfamily \#include $<$S\+A2.\+h$>$}
+
+
+
+Collaboration diagram for S\+A\+\_\+2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classSA__2__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{classSA__2_a1c708dff32ff0526b5b5926e38e77dee}{callback\+\_\+t}) (int step, double temperature, double accept\+Wasted\+Rate, double min\+Wasted\+Rate)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSA__2_a14d69737deeebd1d413517bf013cd16f}{S\+A\+\_\+2} (double \+\_\+t\+St, double \+\_\+t\+En, int \+\_\+step\+Cnt, \hyperlink{classBase__data}{Base\+\_\+data} $\ast$, \hyperlink{classSA__2_a1c708dff32ff0526b5b5926e38e77dee}{callback\+\_\+t} \+\_\+callback=N\+U\+L\+L)
+\item 
+\hyperlink{classBase__data}{Base\+\_\+data} $\ast$ \hyperlink{classSA__2_a991bd4a7842fcaae442e0916445e45ae}{work} ()
+\begin{DoxyCompactList}\small\item\em Main work loop. \end{DoxyCompactList}\item 
+double \hyperlink{classSA__2_adbe6c7eb3f5c15b5ff72490de3be25c4}{getminans} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classSA__2_a826b4a07815b519edd1821b07a0ed1f6}{t\+St}
+\item 
+double \hyperlink{classSA__2_a11eb83d386c783b62689b95a1d61f81b}{t\+En}
+\item 
+int \hyperlink{classSA__2_a9e6e985f337007134f5b82b18fc2a809}{step\+Cnt}
+\item 
+\hyperlink{classBase__data}{Base\+\_\+data} $\ast$ \hyperlink{classSA__2_ac333f4a2da95b01b271ba7ae422b6744}{curdata}
+\item 
+double \hyperlink{classSA__2_aea8cf021e1378fd37136fdff5c11b111}{oldans}
+\item 
+double \hyperlink{classSA__2_a40815916496d990e8bb324c52b33cc2f}{curans}
+\item 
+double \hyperlink{classSA__2_a93a9b121b39a9a88eac0ebdcc2d4c4e0}{minans}
+\item 
+\hyperlink{classSA__2_a1c708dff32ff0526b5b5926e38e77dee}{callback\+\_\+t} \hyperlink{classSA__2_a211a847edaaaf0e95f49b50d7355cc28}{callback}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulated Annealing. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classSA__2_a1c708dff32ff0526b5b5926e38e77dee}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!callback\+\_\+t@{callback\+\_\+t}}
+\index{callback\+\_\+t@{callback\+\_\+t}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{callback\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ S\+A\+\_\+2\+::callback\+\_\+t) (int step, double temperature, double accept\+Wasted\+Rate, double min\+Wasted\+Rate)}\label{classSA__2_a1c708dff32ff0526b5b5926e38e77dee}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSA__2_a14d69737deeebd1d413517bf013cd16f}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\index{S\+A\+\_\+2@{S\+A\+\_\+2}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{S\+A\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}S\+A\+\_\+2\+::\+S\+A\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+t\+St, }
+\item[{double}]{\+\_\+t\+En, }
+\item[{int}]{\+\_\+step\+Cnt, }
+\item[{{\bf Base\+\_\+data} $\ast$}]{\+\_\+data, }
+\item[{{\bf callback\+\_\+t}}]{\+\_\+callback = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classSA__2_a14d69737deeebd1d413517bf013cd16f}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+t\+En} & starting temperature \\
+\hline
+{\em \+\_\+step\+Cnt} & ending temperature (Temperature falls exponentially) \\
+\hline
+{\em \+\_\+data} & how many steps? \\
+\hline
+{\em \+\_\+callback} & The data stucture to storage the data callback to report parameters in each step \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSA__2_adbe6c7eb3f5c15b5ff72490de3be25c4}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!getminans@{getminans}}
+\index{getminans@{getminans}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{getminans}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::getminans (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSA__2_adbe6c7eb3f5c15b5ff72490de3be25c4}
+\hypertarget{classSA__2_a991bd4a7842fcaae442e0916445e45ae}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!work@{work}}
+\index{work@{work}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{work}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+\_\+data} $\ast$ S\+A\+\_\+2\+::work (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSA__2_a991bd4a7842fcaae442e0916445e45ae}
+
+
+Main work loop. 
+
+\begin{DoxyReturn}{Returns}
+\+: final result 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSA__2_a211a847edaaaf0e95f49b50d7355cc28}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!callback@{callback}}
+\index{callback@{callback}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{callback}]{\setlength{\rightskip}{0pt plus 5cm}{\bf callback\+\_\+t} S\+A\+\_\+2\+::callback\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a211a847edaaaf0e95f49b50d7355cc28}
+\hypertarget{classSA__2_a40815916496d990e8bb324c52b33cc2f}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!curans@{curans}}
+\index{curans@{curans}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{curans}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::curans\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a40815916496d990e8bb324c52b33cc2f}
+\hypertarget{classSA__2_ac333f4a2da95b01b271ba7ae422b6744}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!curdata@{curdata}}
+\index{curdata@{curdata}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{curdata}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Base\+\_\+data}$\ast$ S\+A\+\_\+2\+::curdata\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_ac333f4a2da95b01b271ba7ae422b6744}
+\hypertarget{classSA__2_a93a9b121b39a9a88eac0ebdcc2d4c4e0}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!minans@{minans}}
+\index{minans@{minans}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{minans}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::minans\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a93a9b121b39a9a88eac0ebdcc2d4c4e0}
+\hypertarget{classSA__2_aea8cf021e1378fd37136fdff5c11b111}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!oldans@{oldans}}
+\index{oldans@{oldans}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{oldans}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::oldans\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_aea8cf021e1378fd37136fdff5c11b111}
+\hypertarget{classSA__2_a9e6e985f337007134f5b82b18fc2a809}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!step\+Cnt@{step\+Cnt}}
+\index{step\+Cnt@{step\+Cnt}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{step\+Cnt}]{\setlength{\rightskip}{0pt plus 5cm}int S\+A\+\_\+2\+::step\+Cnt\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a9e6e985f337007134f5b82b18fc2a809}
+\hypertarget{classSA__2_a11eb83d386c783b62689b95a1d61f81b}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!t\+En@{t\+En}}
+\index{t\+En@{t\+En}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{t\+En}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::t\+En\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a11eb83d386c783b62689b95a1d61f81b}
+\hypertarget{classSA__2_a826b4a07815b519edd1821b07a0ed1f6}{}\index{S\+A\+\_\+2@{S\+A\+\_\+2}!t\+St@{t\+St}}
+\index{t\+St@{t\+St}!S\+A\+\_\+2@{S\+A\+\_\+2}}
+\subsubsection[{t\+St}]{\setlength{\rightskip}{0pt plus 5cm}double S\+A\+\_\+2\+::t\+St\hspace{0.3cm}{\ttfamily [private]}}\label{classSA__2_a826b4a07815b519edd1821b07a0ed1f6}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{SA2_8h}{S\+A2.\+h}\item 
+\hyperlink{SA2_8cpp}{S\+A2.\+cpp}\end{DoxyCompactItemize}

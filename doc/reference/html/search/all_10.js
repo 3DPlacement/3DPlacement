@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['undo',['undo',['../classTTree.html#a14286d0dba4bda295b7a73ebefbf1bcf',1,'TTree']]],
-  ['undolist',['undoList',['../classTTree.html#a384e0ade54dfcb4688d646e3674e964a',1,'TTree']]]
+  ['undo',['undo',['../classBase__data.html#ab7486d1e6e1c199b637cb1473daf9a14',1,'Base_data::undo()'],['../classTTree.html#a14286d0dba4bda295b7a73ebefbf1bcf',1,'TTree::undo()'],['../classTTree__data.html#ac2f447392cb0cf81db44d4f85d4bfd8a',1,'TTree_data::undo()']]],
+  ['undolist',['undoList',['../classTTree.html#a384e0ade54dfcb4688d646e3674e964a',1,'TTree']]],
+  ['update',['update',['../classBase__data.html#a8545b22fc79ece9d036731ecb3db7b5d',1,'Base_data::update()'],['../classTTree__data.html#a828b99a40bab8933fd3c648ee4f10d85',1,'TTree_data::update()']]]
 ];

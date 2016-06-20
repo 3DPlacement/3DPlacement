@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['m',['m',['../classTTree_1_1Node.html#a3f47f1068b4631b1d9eddea0300c6bee',1,'TTree::Node']]],
-  ['maxblocksize',['maxBlockSize',['../test_8cpp.html#a6405e942744ed21d4678c62f912ca748',1,'test.cpp']]],
-  ['minplacement',['minPlacement',['../classSA.html#a7e672b166a76e7c57d036443536b7bdb',1,'SA']]],
-  ['minwasted',['minWasted',['../classSA.html#a538b1d25b6b4c7683b3bac3212b01b3c',1,'SA']]],
-  ['miny',['minY',['../structTTree_1_1subtree__t.html#af9ebff6ea2db9188e99eb65fe7f3cc61',1,'TTree::subtree_t']]],
-  ['minz',['minZ',['../structTTree_1_1subtree__t.html#a3bcb871c4eeeaf275469ab86431381fa',1,'TTree::subtree_t']]],
-  ['mtree',['mTree',['../classSA.html#a343f0b884e2e401a6fa21204d52ab0f6',1,'SA']]]
+  ['netv',['NetV',['../classTTree__data.html#ab63ddf6e7ecf680762cc3af591986d73',1,'TTree_data']]],
+  ['netvolume',['netVolume',['../classPlacement.html#afe51f89ddfdb2d27b68449d96f50e24d',1,'Placement']]],
+  ['next',['next',['../structContourList_1_1Node.html#ab93d87ce30e069a1154bce37acf1964d',1,'ContourList::Node']]]
 ];

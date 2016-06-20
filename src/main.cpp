@@ -5,15 +5,17 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "SA.h"
+#include <cstdio>
+#include "SA2.h"
 #include "TTree.h"
 #include "Block.h"
 #include "Placement.h"
+#include "TTreedata.h"
 
 /// Report every several steps
 void callback(int step, double temperature, double acceptWastedRate, double minWastedRate)
 {
-    if (step % 100) return;
+    if (step % 1000) return;
     std::clog << " step = " << step
               << " temp = " << temperature
               << " acceptWastedRate = " << acceptWastedRate
@@ -36,7 +38,7 @@ std::vector<Block> loadBlocks(std::istream &is)
     return ret;
 }
 
-SA loadSA(std::istream &is, TTree *tree)
+SA_2 loadconf(std::istream &is, TTree *tree)
 {
     double tSt, tEn;
     int stepCnt;
@@ -53,8 +55,8 @@ SA loadSA(std::istream &is, TTree *tree)
     }
 
     std::istringstream is2(raw);
-    is2 >> tSt >> tEn >> stepCnt >> pMove >> pSwap;
-    return SA(tree, tSt, tEn, stepCnt, pMove, pSwap, callback);
+    is2 >> tSt >> tEn >> stepCnt >> pMove >> pSwap; 
+    return SA_2(tSt, tEn, stepCnt, new TTree_data(pMove, pSwap, tree), callback);
 }
 
 int main(int argc, char **argv)
@@ -80,10 +82,13 @@ int main(int argc, char **argv)
 
     TTree tree;
     tree.initialize(blocks);
-    SA sa(loadSA(configFile, &tree));
+    
+    SA_2 sa(loadconf(configFile, &tree));
 
-    double wastedRate = sa.work();
-    Placement placement = sa.getPlacement();
+    TTree_data* Tdata = dynamic_cast<TTree_data*>(sa.work());
+    assert(Tdata!=NULL);
+    Placement placement = Tdata->get_best_Placement();
+    double wastedRate = sa.getminans();
     double totVol = placement.getVolume(), netVol = placement.getNetVolume();
     assert(fabs(wastedRate - (1.0 - netVol / totVol)) < 1e-7);
 

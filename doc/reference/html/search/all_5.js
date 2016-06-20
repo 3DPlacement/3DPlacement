@@ -1,13 +1,16 @@
 var searchData=
 [
   ['gen_2ecpp',['gen.cpp',['../gen_8cpp.html',1,'']]],
+  ['get_5fbest_5fplacement',['get_best_Placement',['../classTTree__data.html#a4043bb9cd9f3d3b2509653d567c11fa8',1,'TTree_data']]],
+  ['getans',['getans',['../classBase__data.html#a30c68b7fadf62354a5291e63c826a6b1',1,'Base_data::getans()'],['../classTTree__data.html#a2524c0f18f01378fc80fd558e3b7cebb',1,'TTree_data::getans()']]],
   ['getengine',['getEngine',['../classRandom.html#aa4b65c7cd8e0ada6c0dca5937236dda0',1,'Random']]],
   ['geth',['getH',['../structRotatableBlock.html#ac4f1a519af134049d68d9ee103c2aa89',1,'RotatableBlock']]],
   ['getinstance',['getInstance',['../classRandom.html#a2aa30d2f678fc76f75efc60356c6ea4d',1,'Random']]],
   ['getl',['getL',['../structRotatableBlock.html#a0ed9c1f491d20ef51f1a655bf9ebbb2f',1,'RotatableBlock']]],
+  ['getminans',['getminans',['../classSA__2.html#adbe6c7eb3f5c15b5ff72490de3be25c4',1,'SA_2']]],
   ['getnetvolume',['getNetVolume',['../classPlacement.html#a479626954e228086398665507bed9beb',1,'Placement']]],
   ['getnext',['getNext',['../structContourList_1_1Node.html#a1a7a77c38775ce6d5c5a55227b0d9094',1,'ContourList::Node']]],
-  ['getplacement',['getPlacement',['../classSA.html#ae0af3686177f62dca04b108a833343ea',1,'SA::getPlacement()'],['../classTTree.html#a7e34e70567be7961d4a5683010746aae',1,'TTree::getPlacement()']]],
+  ['getplacement',['getPlacement',['../classTTree.html#a7e34e70567be7961d4a5683010746aae',1,'TTree']]],
   ['getplacementrecur',['getPlacementRecur',['../classTTree.html#a99a5f5452d13f1a3e4b74f8275224beb',1,'TTree']]],
   ['getpositions',['getPositions',['../classPlacement.html#a8d2aff015fbf652bbccae2db6c7dd7d9',1,'Placement']]],
   ['getprev',['getPrev',['../structContourList_1_1Node.html#a14a3d76c3eedeb27c589d4863f618fb9',1,'ContourList::Node']]],

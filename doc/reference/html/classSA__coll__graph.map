@@ -1,7 +1,0 @@
-<map id="SA" name="SA">
-<area shape="rect" id="node2" href="$classTTree.html" title="{TTree\n|&#45; pool\l&#45; undoList\l|+ TTree()\l+ initialize()\l+ initialize()\l+ getPlacement()\l+ randomMove()\l+ randomSwap()\l+ randomRotate()\l+ undo()\l+ TTree()\l+ operator=()\l+ TTree()\l+ operator=()\l+ verify()\l&#45; initializeRecur()\l&#45; getPlacementRecur()\l&#45; randNode()\l&#45; randPair()\l&#45; swapNode()\l&#45; detach()\l&#45; insert()\l&#45; verifyRecur()\l}" alt="" coords="5,660,159,1045"/>
-<area shape="rect" id="node3" href="$classTTree_1_1Node.html" title="Internal class. A node of T Tree. " alt="" coords="33,388,131,597"/>
-<area shape="rect" id="node4" href="$structRotatableBlock.html" title="{RotatableBlock\n|+ rotation\l|+ RotatableBlock()\l+ getL()\l+ getW()\l+ getH()\l+ getRandRotate()\l}" alt="" coords="17,189,147,325"/>
-<area shape="rect" id="node5" href="$structBlock.html" title="Defines a block out of the coordinates. " alt="" coords="45,5,119,127"/>
-<area shape="rect" id="node6" href="$classPlacement.html" title="A compact placement of blocks. " alt="" coords="182,682,313,1023"/>
-</map>
