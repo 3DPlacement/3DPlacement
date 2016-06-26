@@ -10,7 +10,7 @@
 class SA_2
 {
 public:
-    typedef void(*callback_t)(int step, double temperature, double acceptWastedRate, double minWastedRate);
+    typedef void(*callback_t)(int, double , double , double);
    
     SA_2(
          double _tSt, /// starting temperature
